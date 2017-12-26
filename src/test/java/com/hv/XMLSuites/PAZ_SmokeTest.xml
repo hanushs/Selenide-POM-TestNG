@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Create PAZ Test">
+
+    <test verbose="1" name="Create PAZ Test" preserve-order="true">
+        <parameter name="user" value="admin"/>
+        <parameter name="password" value="password"/>
+        <classes>
+            <class name="com.hv.test.PAZ_SmokeTest">
+                <methods>
+                    <include name="createNewAnalyzerReport"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>
