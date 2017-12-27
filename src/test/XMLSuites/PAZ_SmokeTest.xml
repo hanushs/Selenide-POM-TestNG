@@ -6,6 +6,7 @@
     <test verbose="1" name="Create PAZ Test" preserve-order="true">
         <parameter name="user" value="admin"/>
         <parameter name="password" value="password"/>
+        <parameter name="datasource" value="SteelWheelsSales"/>
         <classes>
             <class name="com.hv.test.PAZ_SmokeTest">
                 <methods>

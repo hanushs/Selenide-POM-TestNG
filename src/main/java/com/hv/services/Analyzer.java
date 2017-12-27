@@ -16,6 +16,7 @@ public class Analyzer {
         this.pazReportPage = pazReportPage;
     }
 
+
     public void selectDataSourcePAZandOpen(String dataSource) {
         pazReportPage.switchToReportFrame();
         pazReportPage.clickPAZDataSource(dataSource);
@@ -33,5 +34,8 @@ public class Analyzer {
         pazReportPage.isPazLayoutPanelExist();
         pazReportPage.isPazReportContainerExist();
         pazReportPage.isPazReportButtonsExist();
+    }
+
+    public void addFieldsToReport() {
     }
 }

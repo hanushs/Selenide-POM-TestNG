@@ -1,4 +1,4 @@
-package com.hv.utils;
+package com.hv.test;
 
 import com.codeborne.selenide.testng.ScreenShooter;
 import com.codeborne.selenide.testng.TextReport;
@@ -28,7 +28,6 @@ public class BaseTest {
 
     @BeforeSuite
     protected void init() {
-        addListener(new Highlighter());
 
         ResourceBundle rb = ResourceBundle.getBundle("local");
         Enumeration<String> keys = rb.getKeys();
