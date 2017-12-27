@@ -5,6 +5,7 @@ import static com.codeborne.selenide.Selenide.*;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 
 /**

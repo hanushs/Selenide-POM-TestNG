@@ -1,21 +1,19 @@
 package com.hv.pages;
 
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.logevents.SelenideLogger;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
-import static com.codeborne.selenide.Selenide.*;
-import static java.lang.String.format;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 /**
  * Created by pshynin on 11/15/2017.
@@ -26,6 +24,10 @@ public class AnalyserReportPage extends FilePage {
     //Select DataSource Window
     @FindBy(xpath = "//*[@id='datasources']/*")
     protected ElementsCollection datasources;
+
+    protected SelenideElement datasourceItem(String datasourceName) {
+        return $(By.cssSelector("#datasources>option[title*='" + datasourceName + "']"));
+    }
 
     @FindBy(id = "btnNext")
     protected SelenideElement btnOk;
@@ -46,6 +48,9 @@ public class AnalyserReportPage extends FilePage {
     @FindBy(id = "reportBtns")
     protected SelenideElement paz_reportButtons;
     //__________________________________________________
+
+    @FindBy( id = "cmdFieldAdd_text" )
+    protected SelenideElement contextMenuAddToReport;
 
 
     /**
@@ -76,17 +81,20 @@ public class AnalyserReportPage extends FilePage {
     }
 
     public void clickPAZDataSource(String datasourceName) {
-        LOGGER.info("Selecting datasource " + datasourceName + " for Analyzer report");
-        SelenideLogger.beginStep("Selecting datasource", "Hello");
-        for (SelenideElement element : $$(By.xpath("//*[@id='datasources']/*"))) {
-            String tempDatasource = element.getAttribute("title");
-            LOGGER.info("Checking " + tempDatasource + " to be equal " + datasourceName);
-            if (tempDatasource.equals(datasourceName)) {
-                LOGGER.info(datasourceName + " is found");
-                element.scrollTo();
-                element.click();
-                break;
+        switchToDefault();
+        switchToReportFrame();
+        datasourceItem(datasourceName).doubleClick();
+    }
+
+    public void makeClickable() {
+        // magic fix to make element clickable if div is on the front
+        try {
+            while (!$$(By.cssSelector("body > div[style*='display: block']")).isEmpty()) {
+                $$(By.cssSelector("body > div[style*='display: block']")).get(0).click();
+                LOGGER.info("make clickable");
             }
+        } catch (Exception e) {
+            LOGGER.warn("'Exception appeared during makeClickable operation: " + e.getMessage());
         }
     }
 
@@ -117,32 +125,46 @@ public class AnalyserReportPage extends FilePage {
     }
 
 
-    public void addFiledToreport(List<String> fields, PAZFIELDADDWORKFLOW workflow, PanelItem panelItem) {
-        for (String field : fields) {
-            SelenideElement element = fieldItem(field);
-            switch (workflow) {
-                case DOUBLE_CLICK:
-                    LOGGER.info("Adding field " + field + " to report via Double Click");
-                    element.doubleClick();
-                    break;
-                case RIGHT_CLICK:
-                    LOGGER.info("Adding field " + field + " to report via Right Click");
-                    element.contextClick().selectOptionContainingText("Add to Report");
-                    break;
-                case D_N_D:
-                    LOGGER.info("Adding field " + field + " to report via Drag And Drop");
-                    fieldDragAndDrop( field, panelItem );
-                    break;
-
-            }
-        }
+    public void addFieldToReport(String field, PAZFIELDADDWORKFLOW workflow) {
+        addFieldToReport(field, workflow, PanelItem.LAYOUT_ROWS);
     }
 
-    public void fieldDragAndDrop( String fieldDrag, PanelItem fieldDropTo ) {
+    public void addFieldToReport(String field, PAZFIELDADDWORKFLOW workflow, PanelItem panelItem) {
+
+        SelenideElement element = fieldItem(field);
+        switch (workflow) {
+            case DOUBLE_CLICK:
+                LOGGER.info("Adding field " + field + " to report via Double Click");
+                element.doubleClick();
+                break;
+            case RIGHT_CLICK:
+                LOGGER.info("Adding field " + field + " to report via Right Click");
+                element.contextClick();
+                contextMenuAddToReport.click();
+                break;
+            case D_N_D:
+                LOGGER.info("Adding field " + field + " to report via Drag And Drop");
+                fieldDragAndDrop(field, panelItem);
+                break;
+
+        }
+
+
+
+    }
+
+    public void verifyFieldAdded(String field){
+        String assertIfDragged = "//div[@class='gem-label'][contains (., '" + field + "')]";
+        SelenideElement addedRow = $(By.xpath(assertIfDragged));
+        addedRow.waitUntil(Condition.visible,20000);
+    }
+
+
+    public void fieldDragAndDrop(String fieldDrag, PanelItem fieldDropTo) {
         // layout to drop
         String dropRowLevel = "";
-        String dropLevelHere = "dropZonePlaceholder_string";
-        String dropMeasureHere = "dropZonePlaceholder_number";
+        String dropLevelHere = "Drop Level Here";
+        String dropMeasureHere = "Drop Measure Here";
 
         if (fieldDropTo.equals(PanelItem.LAYOUT_ROWS)) {
             dropRowLevel = "//div[contains(@id,'rows_ui')]/div[contains (., '" + dropLevelHere + "')]";
@@ -160,11 +182,16 @@ public class AnalyserReportPage extends FilePage {
         SelenideElement listField = $(By.xpath(dragRowLevel));
         SelenideElement dropRows = $(By.xpath(dropRowLevel));
 
-        listField.dragAndDropTo(dropRows);
+//        listField.dragAndDropTo(dropRows);
 
-        // Assert
-        String assertIfDragged = "//div[@class='gem-label'][contains (., '" + fieldDrag + "')]";
-        SelenideElement addedRow = $(By.xpath(assertIfDragged));
-        addedRow.shouldBe(Condition.visible);
+        Actions dragAndDrop = new Actions( getWebDriver() );
+        Action action =
+                dragAndDrop.clickAndHold( listField.getWrappedElement()).moveByOffset( 5, 5 ).release( dropRows.getWrappedElement() ).build();
+        try {
+            action.perform();
+        } catch ( MoveTargetOutOfBoundsException e ) {
+            LOGGER.error( "Exception occurs during drag and drop!: " + e.toString() );
+            dragAndDrop.release().build().perform();
+        }
     }
 }

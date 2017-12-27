@@ -4,6 +4,8 @@ import com.hv.pages.AnalyserReportPage;
 import com.hv.pages.HomePage;
 import org.apache.log4j.Logger;
 
+import java.util.List;
+
 /**
  * Created by shanush on 12/21/2017.
  */
@@ -18,9 +20,9 @@ public class Analyzer {
 
 
     public void selectDataSourcePAZandOpen(String dataSource) {
-        pazReportPage.switchToReportFrame();
+
+        pazReportPage.makeClickable();
         pazReportPage.clickPAZDataSource(dataSource);
-        pazReportPage.clickOkPAZDataSource();
         pazReportPage.loading();
         pazReportPage.switchToDefault();
     }
@@ -36,6 +38,4 @@ public class Analyzer {
         pazReportPage.isPazReportButtonsExist();
     }
 
-    public void addFieldsToReport() {
-    }
 }

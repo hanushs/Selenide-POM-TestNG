@@ -7,10 +7,16 @@
         <parameter name="user" value="admin"/>
         <parameter name="password" value="password"/>
         <parameter name="datasource" value="SteelWheelsSales"/>
+        <parameter name="fieldsToRows" value="Territory"/>
+        <parameter name="fieldsToRows1" value="Country"/>
+        <parameter name="fieldsToMeasures" value="Sales"/>
         <classes>
             <class name="com.hv.test.PAZ_SmokeTest">
                 <methods>
                     <include name="createNewAnalyzerReport"/>
+                    <include name="addFieldsToReportWithDoubleClick"/>
+                    <include name="addFieldsToReportWithRightClick"/>
+                    <include name="addFieldsToReportWithDnD"/>
                 </methods>
             </class>
         </classes>

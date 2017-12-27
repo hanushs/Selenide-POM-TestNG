@@ -16,6 +16,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+
 /**
  * Created by pshynin on 12/1/2017.
  */
@@ -48,12 +50,26 @@ public class PAZ_SmokeTest extends BaseTest {
         sleep(3000);
     }
 
-//    @Test
-//    public void addFieldsToReport(){
-//        analyzerService.addFieldsToReport(){
-//
-//        }
-//    }
+    @Test
+    @Parameters({"fieldsToRows"})
+    public void addFieldsToReportWithDoubleClick(String fieldsToRows){
+        pazReport.addFieldToReport(fieldsToRows, AnalyserReportPage.PAZFIELDADDWORKFLOW.DOUBLE_CLICK);
+        pazReport.verifyFieldAdded(fieldsToRows);
+    }
+
+    @Test
+    @Parameters({"fieldsToRows1"})
+    public void addFieldsToReportWithRightClick(String fieldsToRows1){
+        pazReport.addFieldToReport(fieldsToRows1, AnalyserReportPage.PAZFIELDADDWORKFLOW.RIGHT_CLICK);
+        pazReport.verifyFieldAdded(fieldsToRows1);
+    }
+    @Test
+    @Parameters({"fieldsToMeasures"})
+    public void addFieldsToReportWithDnD(String fieldsToMeasures){
+        pazReport.addFieldToReport(fieldsToMeasures, AnalyserReportPage.PAZFIELDADDWORKFLOW.D_N_D, AnalyserReportPage.PanelItem.LAYOUT_MEASURES);
+        pazReport.verifyFieldAdded(fieldsToMeasures);
+    }
+
 }
 
 
