@@ -13,12 +13,13 @@ import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.page;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 /**
  * Created by pshynin on 11/15/2017.
  */
-public class AnalyserReportPage extends FilePage {
+public class AnalyserReportPage extends FilePage implements IReportOptions {
     private static final Logger LOGGER = Logger.getLogger(AnalyserReportPage.class);
 
     //Select DataSource Window
@@ -49,9 +50,28 @@ public class AnalyserReportPage extends FilePage {
     protected SelenideElement paz_reportButtons;
     //__________________________________________________
 
-    @FindBy( id = "cmdFieldAdd_text" )
+    @FindBy(id = "cmdFieldAdd_text")
     protected SelenideElement contextMenuAddToReport;
 
+    @FindBy(id = "PM:measSortHiLow_text")
+    protected SelenideElement sortHighToLow;
+
+    @FindBy(id = "PM:measSortLowHi_text")
+    protected SelenideElement sortLowToHigh;
+
+    @FindBy(id = "dlgTitle")
+    protected SelenideElement sortAlertDialog;
+
+    @FindBy(id = "dlgBtnCancel")
+    protected SelenideElement btnOKAlert;
+
+
+    //Report Options
+    @FindBy( id = "RO_showColumnGrandTotal" )
+    protected static SelenideElement chkShowColumnGrandTotal;
+
+    @FindBy( xpath = "//button[text()='OK']" )
+    protected SelenideElement btnOK;
 
     /**
      * This method returns field element
@@ -61,6 +81,15 @@ public class AnalyserReportPage extends FilePage {
      */
     protected SelenideElement fieldItem(String fieldName) {
         return $(By.xpath("//div[contains(@class,'field') and text()='" + fieldName + "' and not(contains(@formula,'[Measures]'))]"));
+    }
+
+    protected SelenideElement pivotTableColumnHeader(String columnHeaderName) {
+        return $(By.xpath("//div[@class='columnHeaders pivotTableColumnHeaderContainer']//div[contains(.,'" + columnHeaderName + "')]"));
+
+    }
+
+    public enum SORT {
+        LOWtoHIGH, HIGHtoLOW
     }
 
     public enum PAZFIELDADDWORKFLOW {
@@ -74,7 +103,7 @@ public class AnalyserReportPage extends FilePage {
 
         private String name;
 
-        private PanelItem(String name) {
+        PanelItem(String name) {
             this.name = name;
         }
 
@@ -150,13 +179,12 @@ public class AnalyserReportPage extends FilePage {
         }
 
 
-
     }
 
-    public void verifyFieldAdded(String field){
+    public void verifyFieldAdded(String field) {
         String assertIfDragged = "//div[@class='gem-label'][contains (., '" + field + "')]";
         SelenideElement addedRow = $(By.xpath(assertIfDragged));
-        addedRow.waitUntil(Condition.visible,20000);
+        addedRow.waitUntil(Condition.visible, 20000);
     }
 
 
@@ -182,16 +210,58 @@ public class AnalyserReportPage extends FilePage {
         SelenideElement listField = $(By.xpath(dragRowLevel));
         SelenideElement dropRows = $(By.xpath(dropRowLevel));
 
-//        listField.dragAndDropTo(dropRows);
-
-        Actions dragAndDrop = new Actions( getWebDriver() );
+        Actions dragAndDrop = new Actions(getWebDriver());
         Action action =
-                dragAndDrop.clickAndHold( listField.getWrappedElement()).moveByOffset( 5, 5 ).release( dropRows.getWrappedElement() ).build();
+                dragAndDrop.clickAndHold(listField.getWrappedElement()).moveByOffset(5, 5).release(dropRows.getWrappedElement()).build();
         try {
             action.perform();
-        } catch ( MoveTargetOutOfBoundsException e ) {
-            LOGGER.error( "Exception occurs during drag and drop!: " + e.toString() );
+        } catch (MoveTargetOutOfBoundsException e) {
+            LOGGER.error("Exception occurs during drag and drop!: " + e.toString());
             dragAndDrop.release().build().perform();
         }
     }
+
+    public void sortColumn(String columnHeaderName, SORT sort) {
+        switchToReportFrame();
+        switch (sort) {
+            case LOWtoHIGH:
+                pivotTableColumnHeader(columnHeaderName).contextClick();
+                sortLowToHigh.hover().click();
+                break;
+            case HIGHtoLOW:
+                pivotTableColumnHeader(columnHeaderName).contextClick();
+                sortHighToLow.hover().click();
+                break;
+        }
+    }
+
+    public void handleAlert(){
+        sortAlertDialog.shouldHave(Condition.text("Alert"));
+        btnOKAlert.click();
+    }
+
+    public IReportOptions openReportOptions() {
+        if ( btnMoreActions.isDisplayed() ) {
+            btnMoreActions.click();
+            if (!menuMoreActions.isDisplayed()) {
+                btnMoreActions.click();
+                if (!menuMoreActions.isDisplayed()) {
+                    throw new RuntimeException("The more actions menu never opened!");
+                }
+            }
+        }
+        btnReportOptionsMoreMenu.click();
+        return page(AnalyserReportPage.class);
+    }
+
+    public void checkGrandTotalForColumns(){
+        chkShowColumnGrandTotal.click();
+        chkShowColumnGrandTotal.shouldBe(Condition.checked);
+    }
+
+    public void clickOkReportOptions() {
+        btnOK.click();
+    }
+
+
 }

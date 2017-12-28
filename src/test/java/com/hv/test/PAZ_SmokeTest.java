@@ -4,10 +4,12 @@ package com.hv.test;
 import com.codeborne.selenide.testng.annotations.Report;
 
 import static com.codeborne.selenide.Selenide.sleep;
+import static com.hv.pages.AnalyserReportPage.SORT.HIGHtoLOW;
 import  static com.hv.pages.FilePage.FILETYPE;
 
 import com.hv.pages.AnalyserReportPage;
 import com.hv.pages.HomePage;
+import com.hv.pages.IReportOptions;
 import com.hv.services.Analyzer;
 import com.hv.services.Home;
 import com.hv.services.Login;
@@ -15,8 +17,6 @@ import org.apache.log4j.Logger;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
-import java.util.Arrays;
 
 /**
  * Created by pshynin on 12/1/2017.
@@ -26,6 +26,7 @@ public class PAZ_SmokeTest extends BaseTest {
     private static final Logger LOGGER = Logger.getLogger(PAZ_SmokeTest.class);
     private Login loginService;
     private HomePage homePage;
+    public IReportOptions reportOptions;
     private Home homeService;
     private AnalyserReportPage pazReport;
     private Analyzer analyzerService;
@@ -68,6 +69,20 @@ public class PAZ_SmokeTest extends BaseTest {
     public void addFieldsToReportWithDnD(String fieldsToMeasures){
         pazReport.addFieldToReport(fieldsToMeasures, AnalyserReportPage.PAZFIELDADDWORKFLOW.D_N_D, AnalyserReportPage.PanelItem.LAYOUT_MEASURES);
         pazReport.verifyFieldAdded(fieldsToMeasures);
+    }
+
+    @Test
+    @Parameters({"fieldToSort"})
+    public void sortFields(String fieldToSort){
+        pazReport.sortColumn(fieldToSort,HIGHtoLOW);
+        pazReport.handleAlert();
+    }
+
+    @Test
+    public void openReportOptions(){
+        reportOptions = pazReport.openReportOptions();
+        reportOptions.checkGrandTotalForColumns();
+        reportOptions.clickOkReportOptions();
     }
 
 }

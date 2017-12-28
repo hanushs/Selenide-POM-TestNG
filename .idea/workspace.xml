@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hv/pages/AnalyserReportPage.java" afterPath="$PROJECT_DIR$/src/main/java/com/hv/pages/AnalyserReportPage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hv/pages/FilePage.java" afterPath="$PROJECT_DIR$/src/main/java/com/hv/pages/FilePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hv/services/Analyzer.java" afterPath="$PROJECT_DIR$/src/main/java/com/hv/services/Analyzer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/local.properties" afterPath="$PROJECT_DIR$/src/main/resources/local.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/XMLSuites/PAZ_SmokeTest.xml" afterPath="$PROJECT_DIR$/src/test/XMLSuites/PAZ_SmokeTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/hv/test/PAZ_SmokeTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/hv/test/PAZ_SmokeTest.java" />
@@ -33,17 +32,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PAZ_SmokeTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PAZ_SmokeTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/hv/test/PAZ_SmokeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+            <state relative-caret-position="-1210">
+              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MethodInvocationHelper.class" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Report.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/testng/annotations/Report.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MethodInvocationHelper.class" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.13.1/testng-6.13.1.jar!/org/testng/internal/MethodInvocationHelper.class">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="218">
@@ -53,41 +62,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Home.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/services/Home.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-              <folding>
-                <element signature="e#440#441#0" expanded="true" />
-                <element signature="e#480#481#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Analyzer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/services/Analyzer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-              <folding>
-                <element signature="e#399#400#0" expanded="true" />
-                <element signature="e#449#450#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AnalyserReportPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/AnalyserReportPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+            <state relative-caret-position="412">
+              <caret line="253" column="0" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2462#2463#0" expanded="true" />
-                <element signature="e#2502#2503#0" expanded="true" />
+                <element signature="e#3359#3360#0" expanded="true" />
+                <element signature="e#3399#3400#0" expanded="true" />
+                <element signature="e#9099#9100#0" expanded="true" />
+                <element signature="e#9128#9129#0" expanded="true" />
+                <marker date="1514490688035" expanded="true" signature="7336:7793" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IReportOptions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/IReportOptions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FilePage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/FilePage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#814#815#0" expanded="true" />
+                <element signature="e#864#865#0" expanded="true" />
+                <element signature="e#907#908#0" expanded="true" />
+                <element signature="e#943#944#0" expanded="true" />
+                <element signature="e#1735#1736#0" expanded="true" />
+                <element signature="e#1787#1788#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,22 +117,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SelenideElement.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/SelenideElement.java">
+      <file leaf-file-name="Actions.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.6.0/selenium-remote-driver-3.6.0.jar!/org/openqa/selenium/interactions/Actions.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1132">
-              <caret line="582" column="7" selection-start-line="582" selection-start-column="7" selection-end-line="582" selection-end-column="7" />
+            <state relative-caret-position="357">
+              <caret line="316" column="0" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="local.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/local.properties">
+      <file leaf-file-name="Selenide.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/Selenide.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="203">
+              <caret line="679" column="0" selection-start-line="679" selection-start-column="0" selection-end-line="679" selection-end-column="0" />
+              <folding>
+                <element signature="e#24042#24043#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,18 +142,8 @@
       <file leaf-file-name="PAZ_SmokeTest.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/XMLSuites/PAZ_SmokeTest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FilePage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/FilePage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+            <state relative-caret-position="462">
+              <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -187,11 +193,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/BasePage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hv/utils/BaseTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/hv/test/BaseTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/FilePage.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/local.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/hv/services/Analyzer.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/local.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/ReportOptionsPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/ReportOptions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/IReportOptions.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/hv/test/PAZ_SmokeTest.java" />
         <option value="$PROJECT_DIR$/src/test/XMLSuites/PAZ_SmokeTest.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/FilePage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/AnalyserReportPage.java" />
       </list>
     </option>
@@ -822,40 +831,40 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.27 at 15h 05m 04s.xml">
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.28 at 12h 53m 04s.xml">
       <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.27 at 15h 05m 43s.xml">
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.28 at 14h 34m 29s.xml">
       <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.27 at 15h 47m 48s.xml">
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.28 at 14h 35m 30s.xml">
       <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.27 at 15h 54m 28s.xml">
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.28 at 14h 39m 13s.xml">
       <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.27 at 15h 55m 31s.xml">
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.28 at 14h 40m 15s.xml">
       <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.27 at 16h 01m 29s.xml">
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.28 at 14h 46m 38s.xml">
       <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.27 at 16h 16m 47s.xml">
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.28 at 14h 47m 40s.xml">
       <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.27 at 16h 18m 29s.xml">
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.28 at 14h 50m 35s.xml">
       <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.27 at 16h 19m 15s.xml">
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.28 at 14h 51m 24s.xml">
       <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.27 at 16h 26m 54s.xml">
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_XMLSuites_PAZ_SmokeTest_xml - 2017.12.28 at 14h 52m 22s.xml">
       <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="2391" y="-9" width="2418" height="1318" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -874,7 +883,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44319168" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44319168" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -928,57 +937,27 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/hv/test/PAZ_SmokeTest.java</url>
-          <line>69</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/hv/pages/AnalyserReportPage.java</url>
+          <line>203</line>
           <properties />
-          <option name="timeStamp" value="34" />
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/hv/test/PAZ_SmokeTest.java</url>
-          <line>68</line>
+          <line>82</line>
           <properties />
-          <option name="timeStamp" value="35" />
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="36" />
+      <option name="time" value="42" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="TestNG">
-        <watch expression="datasourceItem(tempDatasource)" language="JAVA" />
-      </configuration>
-    </watches-manager>
+    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8.jar!/com/codeborne/selenide/logevents/SimpleReport.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/reports/tests/com/hv/test/Demo_Test/createNewReport/1513864992041.0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/testng/ScreenShooter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/testng/annotations/Report.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.13.1/testng-6.13.1.jar!/org/testng/ITestResult.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1016,13 +995,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/File.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/DataSourcePage.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/services/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/LoginPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
@@ -1215,52 +1187,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/Selenide.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="614" column="38" selection-start-line="614" selection-start-column="38" selection-end-line="614" selection-end-column="38" />
-          <folding>
-            <element signature="e#21937#21938#0" expanded="false" />
-            <element signature="e#22006#22007#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/HomePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="73" column="16" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/services/Home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-          <folding>
-            <element signature="e#440#441#0" expanded="true" />
-            <element signature="e#480#481#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/FilePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.13.1/testng-6.13.1.jar!/org/testng/internal/Invoker.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="616" column="0" selection-start-line="616" selection-start-column="0" selection-end-line="616" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/services/Analyzer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
@@ -1272,26 +1198,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/services/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding>
+            <element signature="e#383#384#0" expanded="false" />
+            <element signature="e#425#426#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/HomePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="48" column="30" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/SelenideElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1132">
-          <caret line="582" column="7" selection-start-line="582" selection-start-column="7" selection-end-line="582" selection-end-column="7" />
+        <state relative-caret-position="159">
+          <caret line="723" column="46" selection-start-line="723" selection-start-column="46" selection-end-line="723" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/commands/DragAndDropTo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/local.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="308">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/XMLSuites/PAZ_SmokeTest.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/services/Home.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+        <state relative-caret-position="276">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/Selenide.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="679" column="0" selection-start-line="679" selection-start-column="0" selection-end-line="679" selection-end-column="0" />
+          <folding>
+            <element signature="e#24042#24043#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.6.0/selenium-remote-driver-3.6.0.jar!/org/openqa/selenium/interactions/Actions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="316" column="0" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1304,23 +1275,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/AnalyserReportPage.java">
+    <entry file="file://$PROJECT_DIR$/src/test/XMLSuites/PAZ_SmokeTest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/IReportOptions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/FilePage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
-          <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2462#2463#0" expanded="true" />
-            <element signature="e#2502#2503#0" expanded="true" />
+            <element signature="e#814#815#0" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#943#944#0" expanded="true" />
+            <element signature="e#1735#1736#0" expanded="true" />
+            <element signature="e#1787#1788#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/hv/test/PAZ_SmokeTest.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.13.1/testng-6.13.1.jar!/org/testng/internal/Invoker.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        <state relative-caret-position="203">
+          <caret line="461" column="0" selection-start-line="461" selection-start-column="0" selection-end-line="461" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/AnalyserReportPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="253" column="0" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3359#3360#0" expanded="true" />
+            <element signature="e#3399#3400#0" expanded="true" />
+            <element signature="e#9099#9100#0" expanded="true" />
+            <element signature="e#9128#9129#0" expanded="true" />
+            <marker date="1514490688035" expanded="true" signature="7336:7793" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1328,6 +1334,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
           <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/testng/annotations/Report.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/hv/test/PAZ_SmokeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1210">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding />
         </state>
       </provider>
