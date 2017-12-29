@@ -63,8 +63,4 @@ public class FilePage extends BasePage {
         }
     }
 
-    public void isPazReportTabPresent() {
-        pazReportTab.should(Condition.exist);
-    }
-
 }

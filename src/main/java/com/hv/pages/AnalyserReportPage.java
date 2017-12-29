@@ -67,10 +67,10 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
 
 
     //Report Options
-    @FindBy( id = "RO_showColumnGrandTotal" )
+    @FindBy(id = "RO_showColumnGrandTotal")
     protected static SelenideElement chkShowColumnGrandTotal;
 
-    @FindBy( xpath = "//button[text()='OK']" )
+    @FindBy(xpath = "//button[text()='OK']")
     protected SelenideElement btnOK;
 
     /**
@@ -100,19 +100,10 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
         LAYOUT_COLUMNS("Columns"),
         LAYOUT_MEASURES("Measures"),
         LAYOUT_ROWS("Rows");
-
         private String name;
-
         PanelItem(String name) {
             this.name = name;
         }
-
-    }
-
-    public void clickPAZDataSource(String datasourceName) {
-        switchToDefault();
-        switchToReportFrame();
-        datasourceItem(datasourceName).doubleClick();
     }
 
     public void makeClickable() {
@@ -127,39 +118,11 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
         }
     }
 
-    public void clickOkPAZDataSource() {
-        LOGGER.info("Pressing OK for PAZ datasource");
-        btnOk.click();
-        pazDatasourceWindow.shouldNotBe(Condition.visible);
-    }
-
-    public void isPazContentPaneExist() {
-        LOGGER.info("Verifying if PAZ report content pane present");
-        paz_contentPane.shouldBe(Condition.visible);
-    }
-
-    public void isPazLayoutPanelExist() {
-        LOGGER.info("Verifying if PAZ report layout panel exist.");
-        paz_layoutPanel.shouldBe(Condition.visible);
-    }
-
-    public void isPazReportContainerExist() {
-        LOGGER.info("Verifying if PAZ report content container exist.");
-        paz_reportContainer.shouldBe(Condition.visible);
-    }
-
-    public void isPazReportButtonsExist() {
-        LOGGER.info("Verifying if PAZ report buttons panel exist.");
-        paz_reportButtons.shouldBe(Condition.visible);
-    }
-
-
     public void addFieldToReport(String field, PAZFIELDADDWORKFLOW workflow) {
         addFieldToReport(field, workflow, PanelItem.LAYOUT_ROWS);
     }
 
     public void addFieldToReport(String field, PAZFIELDADDWORKFLOW workflow, PanelItem panelItem) {
-
         SelenideElement element = fieldItem(field);
         switch (workflow) {
             case DOUBLE_CLICK:
@@ -175,10 +138,7 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
                 LOGGER.info("Adding field " + field + " to report via Drag And Drop");
                 fieldDragAndDrop(field, panelItem);
                 break;
-
         }
-
-
     }
 
     public void verifyFieldAdded(String field) {
@@ -186,7 +146,6 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
         SelenideElement addedRow = $(By.xpath(assertIfDragged));
         addedRow.waitUntil(Condition.visible, 20000);
     }
-
 
     public void fieldDragAndDrop(String fieldDrag, PanelItem fieldDropTo) {
         // layout to drop
@@ -235,13 +194,13 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
         }
     }
 
-    public void handleAlert(){
+    public void handleAlert() {
         sortAlertDialog.shouldHave(Condition.text("Alert"));
         btnOKAlert.click();
     }
 
     public IReportOptions openReportOptions() {
-        if ( btnMoreActions.isDisplayed() ) {
+        if (btnMoreActions.isDisplayed()) {
             btnMoreActions.click();
             if (!menuMoreActions.isDisplayed()) {
                 btnMoreActions.click();
@@ -254,7 +213,7 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
         return page(AnalyserReportPage.class);
     }
 
-    public void checkGrandTotalForColumns(){
+    public void checkGrandTotalForColumns() {
         chkShowColumnGrandTotal.click();
         chkShowColumnGrandTotal.shouldBe(Condition.checked);
     }
@@ -263,5 +222,25 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
         btnOK.click();
     }
 
+    public void selectDataSourcePAZandOpen(String dataSource) {
+        makeClickable();
+        switchToDefault();
+        switchToReportFrame();
+        datasourceItem(dataSource).click();
+        btnOk.click();
+        loading();
+        switchToDefault();
+    }
+
+    public void isPazDefaultOpened() {
+        LOGGER.info("Verifying, that default PAZ report opened.");
+        switchToDefault();
+        pazReportTab.should(Condition.visible);
+        switchToReportFrame();
+        paz_contentPane.shouldBe(Condition.visible);
+        paz_layoutPanel.shouldBe(Condition.visible);
+        paz_reportContainer.shouldBe(Condition.visible);
+        paz_reportButtons.shouldBe(Condition.visible);
+    }
 
 }

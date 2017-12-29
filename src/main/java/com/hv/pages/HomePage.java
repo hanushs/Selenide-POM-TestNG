@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.apache.log4j.Logger;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.page;
 
 /**
  * Created by pshynin on 11/10/2017.
@@ -71,6 +72,14 @@ public class HomePage extends BasePage {
         FILE, VIEW, TOOLS, HELP
     }
 
+    public enum MENUFILENEW {
+        PAZ, PIR, PDD, DS
+    }
+
+    public enum MENUFILE {
+        NEW, OPEN, MANAGEDATASOURCES, RECENT, FAVORITES, SAVE, SAVEAS, LOGOUT
+    }
+
     public void clickMenu(MENU menu) {
         LOGGER.info("Clicking on " + menu + " menu");
         switch (menu) {
@@ -89,9 +98,6 @@ public class HomePage extends BasePage {
         }
     }
 
-    public enum MENUFILE {
-        NEW, OPEN, MANAGEDATASOURCES, RECENT,FAVORITES,SAVE,SAVEAS,LOGOUT
-    }
 
     public void clickMenuFile(MENUFILE menuFile) {
         LOGGER.info("Clicking on " + menuFile + " File menu");
@@ -123,11 +129,6 @@ public class HomePage extends BasePage {
         }
     }
 
-    public enum MENUFILENEW {
-        PAZ, PIR, PDD, DS
-    }
-
-
     public void clickMenuFileNew(MENUFILENEW menuFileNew) {
         LOGGER.info("Clicking on " + menuFileNew + " menu");
         switch (menuFileNew) {
@@ -146,6 +147,25 @@ public class HomePage extends BasePage {
         }
     }
 
+    public Object createNew(FilePage.FILETYPE filetype) {
+        clickMenu(MENU.FILE);
+        clickMenuFile(MENUFILE.NEW);
+        if (filetype.equals(FilePage.FILETYPE.XANALYZER)) {
+            clickMenuFileNew(MENUFILENEW.PAZ);
+            loading();
+            LOGGER.info("Creating AnalyzerService report");
+            return page(AnalyserReportPage.class);
+        } else if (filetype.equals(FilePage.FILETYPE.PRPTI)) {
+            clickMenuFileNew(MENUFILENEW.PIR);
+            LOGGER.info("Creating Interactive report");
+            return page(InteractiveReportPage.class);
+        } else if (filetype.equals(FilePage.FILETYPE.XDASH)) {
+            clickMenuFileNew(MENUFILENEW.PDD);
+            LOGGER.info("Creating Dashboard");
+            return page(DashboardPage.class);
+        }
+        return null;
+    }
 
 
 }

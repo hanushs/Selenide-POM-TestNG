@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.support.FindBy;
 
+import static com.codeborne.selenide.Selenide.page;
 
 
 /**
@@ -11,7 +12,7 @@ import org.openqa.selenium.support.FindBy;
  */
 public class LoginPage {
     private static final Logger LOGGER = Logger.getLogger(LoginPage.class);
-    @FindBy(xpath = "//div[@id='eval-users-toggle']/div[text()='Login as an Evaluator']")
+    @FindBy(xpath = "//div[@id='eval-users-toggle']/div[text()='LoginService as an Evaluator']")
     protected SelenideElement btnLoginAsEvaluator;
 
     @FindBy(xpath = "//div[@id='role-admin-panel']//button[contains(@onclick,'Admin')]")
@@ -26,38 +27,33 @@ public class LoginPage {
     @FindBy(id = "j_password")
     protected SelenideElement userPasswordField;
 
-    @FindBy( xpath = "//button[contains(., 'Login')]" )
+    @FindBy( xpath = "//button[contains(., 'LoginService')]" )
     protected SelenideElement btnLogin;
 
-
-    public void clickLoginAsEvaluator() {
-        LOGGER.info("Clicking on btnLoginAsEvaluator");
-        btnLoginAsEvaluator.click();
+    public enum USER {
+        ADMIN, SUZY
     }
 
-    public void clickLoginAsAdmin(){
-        LOGGER.info("Clicking on btnLoginAsAdmin");
-        btnLoginAsAdmin.click();
-    }
-
-    public void clickLoginAsSuzy(){
-        LOGGER.info("Clicking on btnLoginAsSuzy");
-        btnLoginAsSuzy.click();
-    }
-
-    public void enterUserName(String userName){
-        LOGGER.info("Entering userName " + userName);
+    public HomePage loginWithCredentials(String userName, String password) {
+        LOGGER.info("Login to pentaho as " + userName);
         userNameField.val(userName);
-    }
-
-    public void enterUserPassword(String password){
-        LOGGER.info("Entering password ");
         userPasswordField.val(password);
+        btnLogin.pressEnter();
+        return page(HomePage.class);
     }
 
-    public void clickLoginButton(){
-        LOGGER.info("Clicking Login Button ");
-        btnLogin.pressEnter();
+    public HomePage loginAsEvaluator(USER user) {
+        LOGGER.info("LoginService to Pentaho as " + user);
+        btnLoginAsEvaluator.click();
+        switch (user) {
+            case ADMIN:
+                btnLoginAsAdmin.click();
+                break;
+            case SUZY:
+                btnLoginAsSuzy.click();
+                break;
+        }
+        return page(HomePage.class);
     }
 
 
