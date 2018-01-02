@@ -1,8 +1,10 @@
-package com.hv.pages;
+package com.hv.pages.PAZ;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import com.hv.pages.base.FilePage;
+import com.hv.pages.base.IReportOptions;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Action;
@@ -73,6 +75,18 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
     @FindBy(xpath = "//button[text()='OK']")
     protected SelenideElement btnOK;
 
+    @FindBy( id = "exportMenuItem" )
+    private SelenideElement exportMenuElem;
+
+    @FindBy( id = "cmdPDF" )
+    private SelenideElement exportPdfMenuElem;
+
+    @FindBy( id = "cmdCSV" )
+    private SelenideElement exportCsvMenuElem;
+
+    @FindBy( id = "cmdExcel" )
+    private SelenideElement exportExcelMenuElem;
+
     /**
      * This method returns field element
      *
@@ -93,7 +107,11 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
     }
 
     public enum PAZFIELDADDWORKFLOW {
-        DOUBLE_CLICK, RIGHT_CLICK, D_N_D,
+        DOUBLE_CLICK, RIGHT_CLICK, D_N_D
+    }
+
+    public enum EXPORTYPE{
+        PDF,CSV,EXCEL
     }
 
     public enum PanelItem {
@@ -199,7 +217,8 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
         btnOKAlert.click();
     }
 
-    public IReportOptions openReportOptions() {
+    public void openMoreActionsAndOptions() {
+        switchToReportFrame();
         if (btnMoreActions.isDisplayed()) {
             btnMoreActions.click();
             if (!menuMoreActions.isDisplayed()) {
@@ -209,8 +228,29 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
                 }
             }
         }
+    }
+
+    public IReportOptions openReportOptions(){
         btnReportOptionsMoreMenu.click();
         return page(AnalyserReportPage.class);
+    }
+
+    public FilePage exportAsFileType(EXPORTYPE type){
+        exportMenuElem.click();
+        switch ( type ) {
+            case PDF:
+                exportPdfMenuElem.click();
+                return page(ExportToPDFPage.class);
+            case CSV:
+                exportCsvMenuElem.click();
+                return page(ExportToCsvPage.class);
+            case EXCEL:
+                exportExcelMenuElem.click();
+                return page(ExportToExcelPage.class);
+            default:
+                throw new IllegalArgumentException( "Used ansupported export type: " + type );
+        }
+
     }
 
     public void checkGrandTotalForColumns() {
@@ -226,8 +266,7 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
         makeClickable();
         switchToDefault();
         switchToReportFrame();
-        datasourceItem(dataSource).click();
-        btnOk.click();
+        datasourceItem(dataSource).doubleClick();
         loading();
         switchToDefault();
     }
@@ -235,7 +274,7 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
     public void isPazDefaultOpened() {
         LOGGER.info("Verifying, that default PAZ report opened.");
         switchToDefault();
-        pazReportTab.should(Condition.visible);
+        pazReportTab("Analysis Report").should(Condition.visible);
         switchToReportFrame();
         paz_contentPane.shouldBe(Condition.visible);
         paz_layoutPanel.shouldBe(Condition.visible);

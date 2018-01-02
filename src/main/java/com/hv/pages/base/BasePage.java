@@ -1,7 +1,6 @@
-package com.hv.pages;
+package com.hv.pages.base;
 
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;

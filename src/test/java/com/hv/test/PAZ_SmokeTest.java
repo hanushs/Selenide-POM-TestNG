@@ -2,17 +2,18 @@ package com.hv.test;
 
 
 import com.codeborne.selenide.testng.annotations.Report;
-import com.hv.pages.AnalyserReportPage;
-import com.hv.pages.HomePage;
-import com.hv.pages.IReportOptions;
+import com.hv.pages.PAZ.AnalyserReportPage;
+import com.hv.pages.base.HomePage;
+import com.hv.pages.base.IReportOptions;
+import com.hv.pages.PAZ.ExportToCsvPage;
 import org.apache.log4j.Logger;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.sleep;
-import static com.hv.pages.AnalyserReportPage.SORT.HIGHtoLOW;
-import static com.hv.pages.FilePage.FILETYPE;
+import static com.hv.pages.PAZ.AnalyserReportPage.SORT.HIGHtoLOW;
+import static com.hv.pages.base.FilePage.FILETYPE;
 
 /**
  * Created by pshynin on 12/1/2017.
@@ -24,6 +25,7 @@ public class PAZ_SmokeTest extends BaseTest {
     private HomePage homePage;
     public IReportOptions reportOptions;
     private AnalyserReportPage pazReport;
+    private ExportToCsvPage exportToCsvPage;
 
     @Parameters({"user", "password"})
     @BeforeClass
@@ -70,10 +72,28 @@ public class PAZ_SmokeTest extends BaseTest {
 
     @Test
     public void openReportOptions() {
+        pazReport.openMoreActionsAndOptions();
         reportOptions = pazReport.openReportOptions();
-        pazReport.checkGrandTotalForColumns();
+        reportOptions.checkGrandTotalForColumns();
         reportOptions.clickOkReportOptions();
     }
+
+    @Test
+    @Parameters({"reportNameToSave","filePathToSave"})
+    public void saveReportWithName(String reportNameTosave, String filePathToSave){
+        pazReport.saveReport(reportNameTosave,filePathToSave);
+    }
+
+    @Test
+    @Parameters({"exportType"})
+    public void exportAs(AnalyserReportPage.EXPORTYPE type){
+        pazReport.openMoreActionsAndOptions();
+        exportToCsvPage=(ExportToCsvPage) pazReport.exportAsFileType(type);
+        exportToCsvPage.exportWithOption();
+        sleep(2000);
+    }
+
+
 
 }
 

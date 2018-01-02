@@ -1,7 +1,9 @@
-package com.hv.pages;
+package com.hv.pages.base;
 
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
+import com.hv.pages.PAZ.AnalyserReportPage;
+import com.hv.pages.PDD.DashboardPage;
+import com.hv.pages.PIR.PIRPage;
 import org.openqa.selenium.support.FindBy;
 import org.apache.log4j.Logger;
 
@@ -158,7 +160,7 @@ public class HomePage extends BasePage {
         } else if (filetype.equals(FilePage.FILETYPE.PRPTI)) {
             clickMenuFileNew(MENUFILENEW.PIR);
             LOGGER.info("Creating Interactive report");
-            return page(InteractiveReportPage.class);
+            return page(PIRPage.class);
         } else if (filetype.equals(FilePage.FILETYPE.XDASH)) {
             clickMenuFileNew(MENUFILENEW.PDD);
             LOGGER.info("Creating Dashboard");

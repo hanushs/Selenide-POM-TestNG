@@ -11,6 +11,10 @@
         <parameter name="fieldsToRows1" value="Country"/>
         <parameter name="fieldsToMeasures" value="Sales"/>
         <parameter name="fieldToSort" value="Sales"/>
+        <parameter name="reportNameToSave" value="PAZ_Test_Report5"/>
+        <parameter name="filePathToSave" value="/home/admin"/>
+        <parameter name="exportType" value="CSV"/>
+
         <classes>
             <class name="com.hv.test.PAZ_SmokeTest">
                 <methods>
@@ -20,6 +24,8 @@
                     <include name="addFieldsToReportWithDnD"/>
                     <include name="sortFields"/>
                     <include name="openReportOptions"/>
+                    <include name="saveReportWithName"/>
+                    <include name="exportAs"/>
                 </methods>
             </class>
         </classes>
