@@ -27,46 +27,43 @@ public class PAZ_SmokeTest extends BaseTest {
     private AnalyserReportPage pazReport;
     private ExportToCsvPage exportToCsvPage;
 
-    @Parameters({"user", "password"})
     @BeforeClass
-    public void login(String user, String password) {
-        homePage = loginPage.loginWithCredentials(user, password);
+    public void login() {
+        homePage = loginPage.loginWithCredentials(getTestData().get("UserName"), getTestData().get("UserPassword"));
     }
     
     @Test
-    @Parameters({"datasource"})
-    public void createNewAnalyzerReport(String datasource) {
+    public void createNewAnalyzerReport() {
         pazReport = (AnalyserReportPage) homePage.createNew(FILETYPE.XANALYZER);
-        pazReport.selectDataSourcePAZandOpen(datasource);
+        pazReport.selectDataSourcePAZandOpen(getTestData().get("DatasourceName"));
         pazReport.isPazDefaultOpened();
         sleep(3000);
     }
 
     @Test
-    @Parameters({"fieldsToRows"})
-    public void addFieldsToReportWithDoubleClick(String fieldsToRows) {
-        pazReport.addFieldToReport(fieldsToRows, AnalyserReportPage.PAZFIELDADDWORKFLOW.DOUBLE_CLICK);
-        pazReport.verifyFieldAdded(fieldsToRows);
+    public void addFieldsToReportWithDoubleClick() {
+        String fieldToRows = getTestData().get("FieldsToMove").split(";")[0];
+        pazReport.addFieldToReport(fieldToRows, AnalyserReportPage.PAZFIELDADDWORKFLOW.DOUBLE_CLICK);
+        pazReport.verifyFieldAdded(fieldToRows);
     }
 
     @Test
-    @Parameters({"fieldsToRows1"})
-    public void addFieldsToReportWithRightClick(String fieldsToRows1) {
-        pazReport.addFieldToReport(fieldsToRows1, AnalyserReportPage.PAZFIELDADDWORKFLOW.RIGHT_CLICK);
-        pazReport.verifyFieldAdded(fieldsToRows1);
+    public void addFieldsToReportWithRightClick() {
+        String fieldToRows1 = getTestData().get("FieldsToMove").split(";")[1];
+        pazReport.addFieldToReport(fieldToRows1, AnalyserReportPage.PAZFIELDADDWORKFLOW.RIGHT_CLICK);
+        pazReport.verifyFieldAdded(fieldToRows1);
     }
 
     @Test
-    @Parameters({"fieldsToMeasures"})
-    public void addFieldsToReportWithDnD(String fieldsToMeasures) {
+    public void addFieldsToReportWithDnD() {
+        String fieldsToMeasures = getTestData().get("FieldsToMove").split(";")[2];
         pazReport.addFieldToReport(fieldsToMeasures, AnalyserReportPage.PAZFIELDADDWORKFLOW.D_N_D, AnalyserReportPage.PanelItem.LAYOUT_MEASURES);
         pazReport.verifyFieldAdded(fieldsToMeasures);
     }
 
     @Test
-    @Parameters({"fieldToSort"})
-    public void sortFields(String fieldToSort) {
-        pazReport.sortColumn(fieldToSort, HIGHtoLOW);
+    public void sortFields() {
+        pazReport.sortColumn(getTestData().get("FieldsToSort"), HIGHtoLOW);
         pazReport.handleAlert();
     }
 
@@ -79,14 +76,13 @@ public class PAZ_SmokeTest extends BaseTest {
     }
 
     @Test
-    @Parameters({"reportNameToSave","filePathToSave"})
-    public void saveReportWithName(String reportNameTosave, String filePathToSave){
-        pazReport.saveReport(reportNameTosave,filePathToSave);
+    public void saveReportWithName(){
+        pazReport.saveReport(getTestData().get("ReportNameToSave"),getTestData().get("FilePathToSave"));
     }
 
     @Test
-    @Parameters({"exportType"})
-    public void exportAs(AnalyserReportPage.EXPORTYPE type){
+    public void exportAs(){
+        AnalyserReportPage.EXPORTYPE type = AnalyserReportPage.EXPORTYPE.valueOf(getTestData().get("ExportType"));
         pazReport.openMoreActionsAndOptions();
         exportToCsvPage=(ExportToCsvPage) pazReport.exportAsFileType(type);
         exportToCsvPage.exportWithOption();

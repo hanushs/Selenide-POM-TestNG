@@ -3,17 +3,8 @@
 
 <suite name="Create PAZ Test">
 
-    <test verbose="1" name="Create PAZ Test" preserve-order="true">
-        <parameter name="user" value="admin"/>
-        <parameter name="password" value="password"/>
-        <parameter name="datasource" value="SteelWheelsSales"/>
-        <parameter name="fieldsToRows" value="Territory"/>
-        <parameter name="fieldsToRows1" value="Country"/>
-        <parameter name="fieldsToMeasures" value="Sales"/>
-        <parameter name="fieldToSort" value="Sales"/>
-        <parameter name="reportNameToSave" value="PAZ_Test_Report5"/>
-        <parameter name="filePathToSave" value="/home/admin"/>
-        <parameter name="exportType" value="CSV"/>
+    <test verbose="1" name="PAZ_SmokeTes" preserve-order="true">
+        <parameter name="dataFilePath" value="src/test/DataCSV/PAZTestData.csv"/>
 
         <classes>
             <class name="com.hv.test.PAZ_SmokeTest">

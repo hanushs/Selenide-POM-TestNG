@@ -75,16 +75,16 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
     @FindBy(xpath = "//button[text()='OK']")
     protected SelenideElement btnOK;
 
-    @FindBy( id = "exportMenuItem" )
+    @FindBy(id = "exportMenuItem")
     private SelenideElement exportMenuElem;
 
-    @FindBy( id = "cmdPDF" )
+    @FindBy(id = "cmdPDF")
     private SelenideElement exportPdfMenuElem;
 
-    @FindBy( id = "cmdCSV" )
+    @FindBy(id = "cmdCSV")
     private SelenideElement exportCsvMenuElem;
 
-    @FindBy( id = "cmdExcel" )
+    @FindBy(id = "cmdExcel")
     private SelenideElement exportExcelMenuElem;
 
     /**
@@ -110,8 +110,8 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
         DOUBLE_CLICK, RIGHT_CLICK, D_N_D
     }
 
-    public enum EXPORTYPE{
-        PDF,CSV,EXCEL
+    public enum EXPORTYPE {
+        PDF, CSV, EXCEL
     }
 
     public enum PanelItem {
@@ -119,6 +119,7 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
         LAYOUT_MEASURES("Measures"),
         LAYOUT_ROWS("Rows");
         private String name;
+
         PanelItem(String name) {
             this.name = name;
         }
@@ -230,14 +231,14 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
         }
     }
 
-    public IReportOptions openReportOptions(){
+    public IReportOptions openReportOptions() {
         btnReportOptionsMoreMenu.click();
         return page(AnalyserReportPage.class);
     }
 
-    public FilePage exportAsFileType(EXPORTYPE type){
+    public FilePage exportAsFileType(EXPORTYPE type) {
         exportMenuElem.click();
-        switch ( type ) {
+        switch (type) {
             case PDF:
                 exportPdfMenuElem.click();
                 return page(ExportToPDFPage.class);
@@ -248,13 +249,15 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
                 exportExcelMenuElem.click();
                 return page(ExportToExcelPage.class);
             default:
-                throw new IllegalArgumentException( "Used ansupported export type: " + type );
+                throw new IllegalArgumentException("Used ansupported export type: " + type);
         }
 
     }
 
     public void checkGrandTotalForColumns() {
-        chkShowColumnGrandTotal.click();
+        if (!chkShowColumnGrandTotal.is(Condition.checked)) {
+            chkShowColumnGrandTotal.click();
+        }
         chkShowColumnGrandTotal.shouldBe(Condition.checked);
     }
 
