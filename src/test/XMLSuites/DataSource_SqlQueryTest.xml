@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Create PAZ Test">
+<suite name="DataSource_SqlQueryTest">
     <parameter name="dataFilePath" value="src\test\DataCSV\PAZTestData.csv"/>
 
     <listeners>
         <listener class-name="com.hv.pages.Utils.IHVListener" />
     </listeners>
 
-    <test verbose="1" name="PAZ_SmokeTest" preserve-order="true">
+    <test verbose="1" name="DataSource_SqlQueryTest" preserve-order="true">
         <classes>
-            <class name="com.hv.test.PAZ_SmokeTest">
+            <class name="com.hv.test.DataSource_SqlQueryTest">
                 <methods>
-                    <include name="createNewAnalyzerReport"/>
+                   <!-- <include name="createNewAnalyzerReport"/>
                     <include name="addFieldsToReportWithDoubleClick"/>
                     <include name="addFieldsToReportWithRightClick"/>
                     <include name="addFieldsToReportWithDnD"/>
                     <include name="sortFields"/>
                     <include name="openReportOptions"/>
                     <include name="saveReportWithName"/>
-                    <include name="exportAs"/>
+                    <include name="exportAs"/>-->
                 </methods>
             </class>
         </classes>

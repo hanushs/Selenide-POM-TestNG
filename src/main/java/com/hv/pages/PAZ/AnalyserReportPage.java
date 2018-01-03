@@ -13,9 +13,7 @@ import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selenide.page;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 /**
@@ -29,7 +27,7 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
     protected ElementsCollection datasources;
 
     protected SelenideElement datasourceItem(String datasourceName) {
-        return $(By.cssSelector("#datasources>option[title*='" + datasourceName + "']"));
+        return $(By.xpath("//*[@id='datasources']/option[@title='" + datasourceName + "']"));
     }
 
     @FindBy(id = "btnNext")
@@ -266,8 +264,9 @@ public class AnalyserReportPage extends FilePage implements IReportOptions {
     }
 
     public void selectDataSourcePAZandOpen(String dataSource) {
-        makeClickable();
+
         switchToDefault();
+        makeClickable();
         switchToReportFrame();
         datasourceItem(dataSource).doubleClick();
         loading();

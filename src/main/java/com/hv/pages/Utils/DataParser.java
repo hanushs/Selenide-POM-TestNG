@@ -30,6 +30,8 @@ public class DataParser {
                     headers = tempList;
                 } else if (tempList.toString().contains(testName)) {
                     values = tempList;
+                }else{
+                    throw new NullPointerException("There is no line in Data provider associated with test name " + testName);
                 }
             }
             for (int i = 0; i < headers.size(); i++) {

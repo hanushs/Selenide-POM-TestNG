@@ -7,10 +7,7 @@ import com.hv.pages.Utils.DataParser;
 import com.hv.pages.base.LoginPage;
 import org.apache.log4j.Logger;
 import org.testng.ITestContext;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.util.Enumeration;
 import java.util.Map;
@@ -35,7 +32,10 @@ public class BaseTest {
     private Map<String,String> testData;
 
     @BeforeSuite
-    protected void init() {
+    @Parameters({"dataFilePath"})
+    protected void init(String dataFilePath,final ITestContext testContext) {
+        //parsing data for TestName to be used in test class.
+        testData = DataParser.getTestData(dataFilePath,testContext.getName());
 
         ResourceBundle rb = ResourceBundle.getBundle("local");
         Enumeration<String> keys = rb.getKeys();
@@ -48,14 +48,19 @@ public class BaseTest {
     }
 
     @BeforeClass
-    @Parameters({"dataFilePath"})
-    protected void openPentaho(String dataFilePath,final ITestContext testContext) {
+    protected void openPentaho() {
         LOGGER.info("Opening " + baseUrl + " in " + browser + " browser");
         loginPage = open(baseUrl, LoginPage.class);
-        testData = DataParser.getTestData(dataFilePath,testContext.getName());
+
     }
 
 
+    @AfterSuite
+    protected void sendEmailIfTestFailed(final ITestContext testContext){
+        if(testContext.getFailedTests().size() != 0){
+            LOGGER.info("Sending email");
+        }
+    }
 
 
 }
