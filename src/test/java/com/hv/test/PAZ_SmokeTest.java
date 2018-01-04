@@ -42,28 +42,28 @@ public class PAZ_SmokeTest extends BaseTest {
         sleep(3000);
     }
 
-    @Test(dependsOnMethods = "createNewAnalyzerReport",groups = "fieldAdd")
+    @Test(dependsOnMethods = "createNewAnalyzerReport")
     public void addFieldsToReportWithDoubleClick() {
         String fieldToRows = getTestData().get("FieldsToMove").split(";")[0];
         pazReport.addFieldToReport(fieldToRows, AnalyserReportPage.PAZFIELDADDWORKFLOW.DOUBLE_CLICK);
         pazReport.verifyFieldAdded(fieldToRows);
     }
 
-    @Test(dependsOnMethods = "createNewAnalyzerReport",groups = "fieldAdd")
+    @Test(dependsOnMethods = "createNewAnalyzerReport")
     public void addFieldsToReportWithRightClick() {
         String fieldToRows1 = getTestData().get("FieldsToMove").split(";")[1];
         pazReport.addFieldToReport(fieldToRows1, AnalyserReportPage.PAZFIELDADDWORKFLOW.RIGHT_CLICK);
         pazReport.verifyFieldAdded(fieldToRows1);
     }
 
-    @Test(dependsOnMethods = "createNewAnalyzerReport",groups = "fieldAdd")
+    @Test(dependsOnMethods = "createNewAnalyzerReport")
     public void addFieldsToReportWithDnD() {
         String fieldsToMeasures = getTestData().get("FieldsToMove").split(";")[2];
         pazReport.addFieldToReport(fieldsToMeasures, AnalyserReportPage.PAZFIELDADDWORKFLOW.D_N_D, AnalyserReportPage.PanelItem.LAYOUT_MEASURES);
         pazReport.verifyFieldAdded(fieldsToMeasures);
     }
 
-    @Test(dependsOnMethods = "addFieldsToReportWithDnD",dependsOnGroups = "fieldAdd")
+    @Test(dependsOnMethods = "addFieldsToReportWithDnD")
     public void sortFields() {
         pazReport.sortColumn(getTestData().get("FieldsToSort"), HIGHtoLOW);
         pazReport.handleAlert();

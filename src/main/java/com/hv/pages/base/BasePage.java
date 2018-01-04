@@ -59,4 +59,16 @@ public class BasePage {
 
         return stillLoading;
     }
+
+    public void makeClickable() {
+        // magic fix to make element clickable if div is on the front
+        try {
+            while (!$$(By.cssSelector("body > div[style*='display: block']")).isEmpty()) {
+                $$(By.cssSelector("body > div[style*='display: block']")).get(0).click();
+                LOGGER.info("make clickable");
+            }
+        } catch (Exception e) {
+            LOGGER.warn("'Exception appeared during makeClickable operation: " + e.getMessage());
+        }
+    }
 }

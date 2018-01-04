@@ -1,0 +1,2 @@
+﻿TestName,DataSourceName,DataSourceType,DBConnectionName,DBType,DBConnectionHostName,DBConnectionUserName,DBConnectionDBName,Query
+DataSource_SqlQueryTest,TestDataSource,SQLQuery,Sample,Hypersonic,localhost,sa,SampleData,select * from ORDERS
