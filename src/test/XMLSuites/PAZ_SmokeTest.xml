@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Create PAZ Test">
-    <parameter name="dataFilePath" value="src\testresources\DataCSV\PAZTestData.csv"/>
+    <parameter name="dataFilePath" value="src\test\resources\DataCSV\PAZTestData.csv"/>
 
     <listeners>
         <listener class-name="com.hv.pages.Utils.IHVListener" />
