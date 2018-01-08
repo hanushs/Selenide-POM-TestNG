@@ -53,7 +53,7 @@ public class DataSource_SqlQueryTest extends BaseTest {
         sleep(2000);
     }
 
-    @Test
+    @Test(dependsOnMethods = "createDataSource")
     public void verifyDatasouceCreated() {
         HomePage homePage = page(HomePage.class);
         manageDataSourcesPage = homePage.openManageDatasource();
