@@ -34,15 +34,15 @@ public class LoginPage {
         ADMIN, SUZY
     }
 
-    public HomePage loginWithCredentials(String userName, String password) {
+    public MenuPage loginWithCredentials(String userName, String password) {
         LOGGER.info("Login to pentaho as " + userName);
         userNameField.val(userName);
         userPasswordField.val(password);
         btnLogin.pressEnter();
-        return page(HomePage.class);
+        return page(MenuPage.class);
     }
 
-    public HomePage loginAsEvaluator(USER user) {
+    public MenuPage loginAsEvaluator(USER user) {
         LOGGER.info("Login to Pentaho as " + user);
         btnLoginAsEvaluator.click();
         switch (user) {
@@ -53,7 +53,7 @@ public class LoginPage {
                 btnLoginAsSuzy.click();
                 break;
         }
-        return page(HomePage.class);
+        return page(MenuPage.class);
     }
 
 

@@ -13,13 +13,7 @@
             <class name="com.hv.test.DataSource_SqlQueryTest">
                 <methods>
                     <include name="createDataSource"/>
-                    <!--  <include name="addFieldsToReportWithDoubleClick"/>
-                      <include name="addFieldsToReportWithRightClick"/>
-                      <include name="addFieldsToReportWithDnD"/>
-                      <include name="sortFields"/>
-                      <include name="openReportOptions"/>
-                      <include name="saveReportWithName"/>
-                      <include name="exportAs"/>-->
+                    <include name="verifyDatasouceCreated"/>
                 </methods>
             </class>
         </classes>

@@ -4,7 +4,7 @@ package com.hv.test;
 import com.codeborne.selenide.testng.annotations.Report;
 import com.hv.pages.PAZ.AnalyserReportPage;
 import com.hv.pages.PAZ.ExportToCsvPage;
-import com.hv.pages.base.HomePage;
+import com.hv.pages.base.MenuPage;
 import com.hv.pages.base.IReportOptions;
 import org.apache.log4j.Logger;
 import org.testng.annotations.BeforeClass;
@@ -24,19 +24,19 @@ import static com.hv.pages.base.FilePage.FILETYPE;
 public class PAZ_SmokeTest extends BaseTest {
     private static final Logger LOGGER = Logger.getLogger(PAZ_SmokeTest.class);
 
-    private HomePage homePage;
+    private MenuPage menuPage;
     public IReportOptions reportOptions;
     private AnalyserReportPage pazReport;
     private ExportToCsvPage exportToCsvPage;
 
     @BeforeClass
     public void login() {
-        homePage = loginPage.loginWithCredentials(getTestData().get("UserName"), getTestData().get("UserPassword"));
+        menuPage = loginPage.loginWithCredentials(getTestData().get("UserName"), getTestData().get("UserPassword"));
     }
     
     @Test
     public void createNewAnalyzerReport() {
-        pazReport = (AnalyserReportPage) homePage.createNew(FILETYPE.XANALYZER);
+        pazReport = (AnalyserReportPage) menuPage.createNew(FILETYPE.XANALYZER);
         pazReport.selectDataSourcePAZandOpen(getTestData().get("DatasourceName"));
         pazReport.isPazDefaultOpened();
         sleep(3000);
@@ -84,9 +84,8 @@ public class PAZ_SmokeTest extends BaseTest {
 
     @Test(dependsOnMethods = "createNewAnalyzerReport")
     public void exportAs(){
-        AnalyserReportPage.EXPORTYPE type = AnalyserReportPage.EXPORTYPE.valueOf(getTestData().get("ExportType"));
         pazReport.openMoreActionsAndOptions();
-        exportToCsvPage=(ExportToCsvPage) pazReport.exportAsFileType(type);
+        exportToCsvPage=(ExportToCsvPage) pazReport.exportAsFileType(AnalyserReportPage.EXPORTYPE.CSV);
         exportToCsvPage.exportWithOption();
         sleep(2000);
     }

@@ -1,6 +1,7 @@
 package com.hv.pages.DataSources;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.hv.pages.base.BasePage;
 import org.apache.log4j.Logger;
@@ -9,9 +10,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.page;
-import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.Selenide.*;
 
 /**
  * Created by shanush on 1/3/2018.
@@ -88,8 +87,37 @@ public class DataSourceWizardPage extends BasePage implements ISQLQuery {
     @FindBy(id = "preview")
     protected SelenideElement btnPreviewData;
 
-
     //_________________________________________
+
+    // DS Model________________________________
+    @FindBy(xpath = "//div[@class='dialogTopCenterInner' and contains(.,'Data Source Created')]")
+    protected SelenideElement windowDSCreated;
+
+    public ElementsCollection modelRadioButtons() {
+        return $$(By.cssSelector("#modelerDecision [type=radio]"));
+    }
+
+    public SelenideElement modelLabel(String id) {
+        return $(By.xpath("//label[@for='" + id + "']"));
+    }
+
+    @FindBy(id = "summaryDialog_accept")
+    public SelenideElement btnOKModel;
+
+    public SelenideElement model(String labelText) {
+        return $(By.xpath("//label[text()='" + labelText + "']"));
+    }
+
+    @FindBy(id = "overwriteDialog_accept")
+    protected SelenideElement btnOKOverride;
+
+    //__________________________________________
+    private static final String MODEL_RADIO_BUTTON_DEFAULT = "Keep default model";
+    private static final String MODEL_RADIO_BUTTON_CUSTOMIZE = "Customize model now";
+
+    public enum DSMODEL {
+        CUSTOM, DEFAULT
+    }
 
     //DataSource types when creating datasource.
     public enum DataSourceType {
@@ -152,4 +180,41 @@ public class DataSourceWizardPage extends BasePage implements ISQLQuery {
         btnCancel.shouldBe(Condition.enabled);
         btnPreviewData.shouldBe(Condition.enabled);
     }
+
+    public void finishWizard() {
+        if (btnFinish.isDisplayed() && !btnFinish.isEnabled()) {
+            LOGGER.error("Finish button is not enabled!");
+        }
+        btnFinish.click();
+        loading();
+    }
+
+
+    public boolean isDefaultModelSelected() {
+        String id = null;
+        for (int i = 0; i < modelRadioButtons().size(); i++) {
+            if (modelRadioButtons().get(i).isSelected()) {
+                id = modelRadioButtons().get(i).getAttribute("id");
+            }
+        }
+        return modelLabel(id).getText().equals(MODEL_RADIO_BUTTON_DEFAULT);
+    }
+
+    public void setModel(DSMODEL model) {
+        windowDSCreated.waitUntil(Condition.visible, 5000);
+        switch (model) {
+            case DEFAULT:
+                if (!isDefaultModelSelected()) {
+                    model(MODEL_RADIO_BUTTON_DEFAULT).click();
+                }
+                break;
+            case CUSTOM:
+                if (isDefaultModelSelected()) {
+                    model(MODEL_RADIO_BUTTON_CUSTOMIZE).click();
+                }
+                break;
+        }
+        btnOKModel.click();
+    }
+
 }

@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 /**
  * Created by shanush on 12/22/2017.
  */
-public class BasePage {
+public abstract class BasePage {
     private static final Logger LOGGER = Logger.getLogger(BasePage.class);
 
     @FindBy(css = ".pentaho-busy-indicator-message")
