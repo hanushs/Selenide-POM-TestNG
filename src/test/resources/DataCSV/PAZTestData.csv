@@ -1,2 +1,3 @@
 ﻿TestName,UserName,UserPassword,DatasourceName,FieldsToMove,FieldsToSort,ReportNameToSave,FilePathToSave
-PAZ_SmokeTest,admin,password,SteelWheelsSales,Territory;Country;Sales,Sales,PAZ_Test_Report9,/home/admin
+PAZ_SmokeTest,admin,password,SteelWheelsSales,Territory;Country;Sales,Sales,PAZ_Test_Report12,/home/admin
+PAZ_SmokeTest_1,admin,password,SteelWheelsSales,Territory;Country;Sales,Sales,PAZ_Test_Report13,/home/admin

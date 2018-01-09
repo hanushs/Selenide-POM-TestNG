@@ -64,6 +64,14 @@ public class DataSourceWizardPage extends BasePage implements ISQLQuery {
     @FindBy(id = "general-datasource-window_accept")
     protected SelenideElement btnOK;
 
+
+    @FindBy(id = "overwriteConnectionConfirmationDialog_accept")
+    protected SelenideElement btnOkOverWriteConnectionDS;
+
+    @FindBy(xpath = "//div[text()='Overwrite Connection Confirmation']")
+    protected SelenideElement lblOverWriteConnectionDS;
+
+
     //_________________________________________
 
     // SQL Query
@@ -108,10 +116,14 @@ public class DataSourceWizardPage extends BasePage implements ISQLQuery {
         return $(By.xpath("//label[text()='" + labelText + "']"));
     }
 
-    @FindBy(id = "overwriteDialog_accept")
-    protected SelenideElement btnOKOverride;
 
     //__________________________________________
+
+    @FindBy(id = "overwriteDialog_accept")
+    protected SelenideElement btnOkOverWriteDS;
+
+    @FindBy(xpath = "//div[text()='Overwrite Data Source']")
+    protected SelenideElement lblOverWriteDS;
     private static final String MODEL_RADIO_BUTTON_DEFAULT = "Keep default model";
     private static final String MODEL_RADIO_BUTTON_CUSTOMIZE = "Customize model now";
 
@@ -182,11 +194,16 @@ public class DataSourceWizardPage extends BasePage implements ISQLQuery {
     }
 
     public void finishWizard() {
+        if (lblOverWriteConnectionDS.is(Condition.visible)) {
+            btnOkOverWriteConnectionDS.click();
+        }
         if (btnFinish.isDisplayed() && !btnFinish.isEnabled()) {
             LOGGER.error("Finish button is not enabled!");
         }
         btnFinish.click();
-        loading();
+        if (lblOverWriteDS.is(Condition.visible)) {
+            btnOkOverWriteDS.click();
+        }
     }
 
 

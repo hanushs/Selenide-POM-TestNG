@@ -2,10 +2,7 @@ package com.hv.pages.Utils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -24,14 +21,19 @@ public class DataParser {
         Scanner scanner = null;
         try {
             scanner = new Scanner(new File(pathToDataFile));
-            while (scanner.hasNext()) {
-                List<String> tempList = parseLine(scanner.nextLine());
+            List<String> rows = new ArrayList<>();
+            while (scanner.hasNext()){
+                rows.add(scanner.nextLine());
+            }
+            scanner.close();
+
+            for(int i =0;i<rows.size();i++){
+                ArrayList<String> tempList =(ArrayList<String>) parseLine(rows.get(i));
                 if (tempList.toString().contains("TestName")) {
                     headers = tempList;
-                } else if (tempList.toString().contains(testName)) {
+                } else if (tempList.get(0).toString().equals(testName)) {
                     values = tempList;
-                }else{
-                    throw new NullPointerException("There is no line in Data provider associated with test name " + testName);
+                    break;
                 }
             }
             for (int i = 0; i < headers.size(); i++) {

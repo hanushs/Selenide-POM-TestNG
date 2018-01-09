@@ -16,6 +16,7 @@ import java.util.ResourceBundle;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Configuration.browser;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 /**
  * Created by pshynin on 11/16/2017.
@@ -32,11 +33,7 @@ public class BaseTest {
     private Map<String,String> testData;
 
     @BeforeSuite
-    @Parameters({"dataFilePath"})
-    protected void init(String dataFilePath,final ITestContext testContext) {
-        //parsing data for TestName to be used in test class.
-        testData = DataParser.getTestData(dataFilePath,testContext.getName());
-
+    protected void init() {
         ResourceBundle rb = ResourceBundle.getBundle("local");
         Enumeration<String> keys = rb.getKeys();
 
@@ -48,7 +45,10 @@ public class BaseTest {
     }
 
     @BeforeClass
-    protected void openPentaho() {
+    @Parameters({"dataFilePath"})
+    protected void openPentaho(String dataFilePath,final ITestContext testContext) {
+        //parsing data for TestName to be used in test class.
+        testData = DataParser.getTestData(dataFilePath,testContext.getName());
         LOGGER.info("Opening " + baseUrl + " in " + browser + " browser");
         loginPage = open(baseUrl, LoginPage.class);
 

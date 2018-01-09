@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Create PAZ Test" verbose="1" skipfailedinvocationcounts="false" junit="false" parallel="tests"
+       thread-count="7" data-provider-thread-count="1" annotations="JDK">
+
+    <listeners>
+        <listener class-name="com.hv.pages.Utils.IHVListener" />
+    </listeners>
+
+
+    <test verbose="1" name="PAZ_SmokeTest" >
+        <parameter name="dataFilePath" value="src\test\resources\DataCSV\PAZTestData.csv"/>
+        <classes>
+            <class name="com.hv.test.PAZ_SmokeTest">
+                <methods>
+                    <include name="createNewAnalyzerReport"/>
+                    <include name="addFieldsToReportWithDoubleClick"/>
+                    <include name="addFieldsToReportWithRightClick"/>
+                    <include name="addFieldsToReportWithDnD"/>
+                    <include name="sortFields"/>
+                    <include name="openReportOptions"/>
+                    <include name="saveReportWithName"/>
+                    <include name="exportAs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="1" name="PAZ_SmokeTest_1" >
+        <parameter name="dataFilePath" value="src\test\resources\DataCSV\PAZTestData.csv"/>
+        <classes>
+            <class name="com.hv.test.PAZ_SmokeTest">
+                <methods>
+                    <include name="createNewAnalyzerReport"/>
+                    <include name="addFieldsToReportWithDoubleClick"/>
+                    <include name="addFieldsToReportWithRightClick"/>
+                    <include name="addFieldsToReportWithDnD"/>
+                    <include name="sortFields"/>
+                    <include name="openReportOptions"/>
+                    <include name="saveReportWithName"/>
+                    <include name="exportAs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>
