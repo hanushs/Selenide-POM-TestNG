@@ -1,27 +1,29 @@
 package com.hv.test;
 
+import com.codeborne.selenide.testng.GlobalTextReport;
 import com.codeborne.selenide.testng.ScreenShooter;
-import com.codeborne.selenide.testng.TextReport;
 import com.google.common.base.Strings;
-import com.hv.pages.Utils.DataParser;
+import com.hv.pages.Utils.EmailSender;
 import com.hv.pages.base.LoginPage;
 import org.apache.log4j.Logger;
 import org.testng.ITestContext;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Enumeration;
 import java.util.Map;
 import java.util.ResourceBundle;
-
-import static com.codeborne.selenide.Configuration.baseUrl;
-import static com.codeborne.selenide.Configuration.browser;
-import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import java.util.Scanner;
 
 /**
  * Created by pshynin on 11/16/2017.
  */
-@Listeners({TextReport.class, ScreenShooter.class})
+@Listeners({GlobalTextReport.class, ScreenShooter.class})
 public class BaseTest {
     private static final Logger LOGGER = Logger.getLogger(LoginPage.class);
     protected LoginPage loginPage;
@@ -30,7 +32,7 @@ public class BaseTest {
         return this.testData;
     }
 
-    private Map<String,String> testData;
+    protected Map<String, String> testData;
 
     @BeforeSuite
     protected void init() {
@@ -44,23 +46,16 @@ public class BaseTest {
         }
     }
 
-    @BeforeClass
-    @Parameters({"dataFilePath"})
-    protected void openPentaho(String dataFilePath,final ITestContext testContext) {
-        //parsing data for TestName to be used in test class.
-        testData = DataParser.getTestData(dataFilePath,testContext.getName());
-        LOGGER.info("Opening " + baseUrl + " in " + browser + " browser");
-        loginPage = open(baseUrl, LoginPage.class);
-
-    }
-
-
     @AfterSuite
-    protected void sendEmailIfTestFailed(final ITestContext testContext){
-        if(testContext.getFailedTests().size() != 0){
-            LOGGER.info("Sending email");
-        }
+    protected synchronized void sendEmailIfTestFailed(final ITestContext testContext) {
+//        if (testContext.getFailedTests().size() != 0) {
+            System.out.println(testContext.getCurrentXmlTest().getSuite().getName());
+
+            EmailSender.sendEmailTo(testContext, "siarhei.hanush@hitachivantara.com");
+//        }
     }
+
+
 
 
 }

@@ -4,15 +4,15 @@
 <suite name="DataSource_SqlQueryTest">
     <parameter name="dataFilePath" value="src\test\resources\DataCSV\DataSourceTestDat.csv"/>
 
-    <listeners>
-        <listener class-name="com.hv.pages.Utils.IHVListener" />
-    </listeners>
 
     <test verbose="1" name="DataSource_SqlQueryTest" preserve-order="true">
         <classes>
             <class name="com.hv.test.DataSource_SqlQueryTest">
                 <methods>
-                    <include name="createDataSource"/>
+                    <include name="createDataSource"/> <!--{DBConnectionUserName=sa, DBConnectionDBName=SampleData,
+                             Query=select * from ORDERS, DataSourceName=TestDataSource,
+                              ﻿TestName=DataSource_SqlQueryTest, DBConnectionHostName=localhost,
+                               DataSourceType=SQLQuery, DBType=Hypersonic, DBConnectionName=Sample-->
                     <include name="verifyDatasouceCreated"/>
                 </methods>
             </class>

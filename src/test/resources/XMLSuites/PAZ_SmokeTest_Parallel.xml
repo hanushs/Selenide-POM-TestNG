@@ -4,9 +4,6 @@
 <suite name="Create PAZ Test" verbose="1" skipfailedinvocationcounts="false" junit="false" parallel="tests"
        thread-count="7" data-provider-thread-count="1" annotations="JDK">
 
-    <listeners>
-        <listener class-name="com.hv.pages.Utils.IHVListener" />
-    </listeners>
 
 
     <test verbose="1" name="PAZ_SmokeTest" >

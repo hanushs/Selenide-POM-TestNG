@@ -178,6 +178,12 @@ public class DataSourceWizardPage extends BasePage implements ISQLQuery {
             throw new RuntimeException("Datasource Connection Window no opened.");
         }
         btnOK.click();
+        if (!lblOverWriteConnectionDS.is(Condition.visible)) {
+            sleep(1000);
+        }
+        if (lblOverWriteConnectionDS.is(Condition.visible)) {
+            btnOkOverWriteConnectionDS.click();
+        }
     }
 
     @Override
@@ -194,13 +200,13 @@ public class DataSourceWizardPage extends BasePage implements ISQLQuery {
     }
 
     public void finishWizard() {
-        if (lblOverWriteConnectionDS.is(Condition.visible)) {
-            btnOkOverWriteConnectionDS.click();
-        }
         if (btnFinish.isDisplayed() && !btnFinish.isEnabled()) {
             LOGGER.error("Finish button is not enabled!");
         }
         btnFinish.click();
+        if(!lblOverWriteDS.is(Condition.visible)){
+            sleep(500);
+        }
         if (lblOverWriteDS.is(Condition.visible)) {
             btnOkOverWriteDS.click();
         }

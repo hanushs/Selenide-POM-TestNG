@@ -4,12 +4,19 @@ package com.hv.test;
 import com.codeborne.selenide.testng.annotations.Report;
 import com.hv.pages.PAZ.AnalyserReportPage;
 import com.hv.pages.PAZ.ExportToCsvPage;
+import com.hv.pages.Utils.DataParser;
+import com.hv.pages.base.LoginPage;
 import com.hv.pages.base.MenuPage;
 import com.hv.pages.base.IReportOptions;
 import org.apache.log4j.Logger;
+import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Configuration.browser;
+import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.hv.pages.PAZ.AnalyserReportPage.SORT.HIGHtoLOW;
 import static com.hv.pages.base.FilePage.FILETYPE;
@@ -20,7 +27,6 @@ import static com.hv.pages.base.FilePage.FILETYPE;
 
 // Automated Test: http://testrail.pentaho.com/index.php?/cases/view/64925
 
-@Report
 public class PAZ_SmokeTest extends BaseTest {
     private static final Logger LOGGER = Logger.getLogger(PAZ_SmokeTest.class);
 
@@ -30,10 +36,16 @@ public class PAZ_SmokeTest extends BaseTest {
     private ExportToCsvPage exportToCsvPage;
 
     @BeforeClass
-    public void login() {
-        menuPage = loginPage.loginWithCredentials(getTestData().get("UserName"), getTestData().get("UserPassword"));
+    @Parameters({"dataFilePath"})
+    public void login(String dataFilePath, final ITestContext testContext) {
+            //parsing data for TestName to be used in test class.
+            testData = DataParser.getTestData(dataFilePath, testContext.getName());
+            LOGGER.info("Opening " + baseUrl + " in " + browser + " browser");
+            loginPage = open(baseUrl, LoginPage.class);
+            menuPage = loginPage.loginWithCredentials(getTestData().get("UserName"), getTestData().get("UserPassword"));
     }
-    
+
+    //Steps: 1
     @Test
     public void createNewAnalyzerReport() {
         pazReport = (AnalyserReportPage) menuPage.createNew(FILETYPE.XANALYZER);
@@ -42,13 +54,14 @@ public class PAZ_SmokeTest extends BaseTest {
         sleep(3000);
     }
 
+    //Steps: 2
     @Test(dependsOnMethods = "createNewAnalyzerReport")
     public void addFieldsToReportWithDoubleClick() {
         String fieldToRows = getTestData().get("FieldsToMove").split(";")[0];
         pazReport.addFieldToReport(fieldToRows, AnalyserReportPage.PAZFIELDADDWORKFLOW.DOUBLE_CLICK);
         pazReport.verifyFieldAdded(fieldToRows);
     }
-
+    //Steps: 3
     @Test(dependsOnMethods = "createNewAnalyzerReport")
     public void addFieldsToReportWithRightClick() {
         String fieldToRows1 = getTestData().get("FieldsToMove").split(";")[1];
@@ -56,6 +69,7 @@ public class PAZ_SmokeTest extends BaseTest {
         pazReport.verifyFieldAdded(fieldToRows1);
     }
 
+    //Steps: 4
     @Test(dependsOnMethods = "createNewAnalyzerReport")
     public void addFieldsToReportWithDnD() {
         String fieldsToMeasures = getTestData().get("FieldsToMove").split(";")[2];
@@ -63,12 +77,14 @@ public class PAZ_SmokeTest extends BaseTest {
         pazReport.verifyFieldAdded(fieldsToMeasures);
     }
 
+    //Steps: 5-6
     @Test(dependsOnMethods = "addFieldsToReportWithDnD")
     public void sortFields() {
         pazReport.sortColumn(getTestData().get("FieldsToSort"), HIGHtoLOW);
         pazReport.handleAlert();
     }
 
+    //Steps: 7
     @Test(dependsOnMethods = "createNewAnalyzerReport")
     public void openReportOptions() {
         pazReport.openMoreActionsAndOptions();
@@ -77,11 +93,13 @@ public class PAZ_SmokeTest extends BaseTest {
         reportOptions.clickOkReportOptions();
     }
 
+    //Steps: 8
     @Test(dependsOnMethods = "createNewAnalyzerReport")
     public void saveReportWithName(){
         pazReport.saveReport(getTestData().get("ReportNameToSave"),getTestData().get("FilePathToSave"));
     }
 
+    //Steps: 22-23
     @Test(dependsOnMethods = "createNewAnalyzerReport")
     public void exportAs(){
         pazReport.openMoreActionsAndOptions();

@@ -2,23 +2,25 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Create PAZ Test">
-    <parameter name="dataFilePath" value="src\test\resources\DataCSV\PAZTestData.csv"/>
 
     <listeners>
-        <listener class-name="com.hv.pages.Utils.IHVListener" />
+        <listener class-name="com.hv.services.testrail.PTRUpdater" />
     </listeners>
 
+    <parameter name="dataFilePath" value="src\test\resources\DataCSV\PAZTestData.csv"/>
+
     <test verbose="1" name="PAZ_SmokeTest" preserve-order="true">
+        <parameter name="testrail_case_id" value="810894" />
         <classes>
             <class name="com.hv.test.PAZ_SmokeTest">
                 <methods>
-                    <include name="createNewAnalyzerReport"/>
-                    <include name="addFieldsToReportWithDoubleClick"/>
-                    <include name="addFieldsToReportWithRightClick"/>
-                    <include name="addFieldsToReportWithDnD"/>
-                    <include name="sortFields"/>
+                    <include name="createNewAnalyzerReport"/>  <!-- "DatasourceName = SteelWheelsSales";-->
+                    <include name="addFieldsToReportWithDoubleClick"/> <!-- "FieldsToMove = Territory";-->
+                    <include name="addFieldsToReportWithRightClick"/><!-- "FieldsToMove = Country";-->
+                    <include name="addFieldsToReportWithDnD"/><!-- "FieldsToMove = Countrys";-->
+                    <include name="sortFields"/><!-- "FieldsToSort = Sales";-->
                     <include name="openReportOptions"/>
-                    <include name="saveReportWithName"/>
+                    <include name="saveReportWithName"/><!-- "ReportNameToSave = PAZ_Test_Report12";"FilePathToSave = /home/admin"-->
                     <include name="exportAs"/>
                 </methods>
             </class>

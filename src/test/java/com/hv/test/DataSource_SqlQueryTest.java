@@ -5,13 +5,19 @@ import com.codeborne.selenide.testng.annotations.Report;
 import com.hv.pages.DataSources.DataSourceWizardPage;
 import com.hv.pages.DataSources.ISQLQuery;
 import com.hv.pages.DataSources.ManageDataSourcesPage;
+import com.hv.pages.Utils.DataParser;
 import com.hv.pages.base.HomePage;
 import com.hv.pages.base.MenuPage;
 import com.hv.pages.base.LoginPage;
 import org.apache.log4j.Logger;
+import org.testng.ITestContext;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Configuration.browser;
+import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 import static com.codeborne.selenide.Selenide.sleep;
 
@@ -31,11 +37,16 @@ public class DataSource_SqlQueryTest extends BaseTest {
     private ManageDataSourcesPage manageDataSourcesPage;
 
     @BeforeClass
-    public void login() {
+    @Parameters({"dataFilePath"})
+    public void login(String dataFilePath, final ITestContext testContext) {
+        //parsing data for TestName to be used in test class.
+        testData = DataParser.getTestData(dataFilePath, testContext.getName());
+        LOGGER.info("Opening " + baseUrl + " in " + browser + " browser");
+        loginPage = open(baseUrl, LoginPage.class);
         menuPage = loginPage.loginAsEvaluator(LoginPage.USER.ADMIN);
     }
 
-    //steps 1-2,7
+    //Steps: 1-2,7
     @Test
     public void createDataSource() {
         dataSourceWizardPage = menuPage.createNewDatasource();
@@ -52,7 +63,7 @@ public class DataSource_SqlQueryTest extends BaseTest {
         dataSourceWizardPage.setModel(DataSourceWizardPage.DSMODEL.DEFAULT);
         sleep(2000);
     }
-
+    //Steps: 8
     @Test(dependsOnMethods = "createDataSource")
     public void verifyDatasouceCreated() {
         HomePage homePage = page(HomePage.class);
