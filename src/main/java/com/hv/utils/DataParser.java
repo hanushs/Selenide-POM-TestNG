@@ -1,4 +1,4 @@
-package com.hv.pages.Utils;
+package com.hv.utils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,13 +22,13 @@ public class DataParser {
         try {
             scanner = new Scanner(new File(pathToDataFile));
             List<String> rows = new ArrayList<>();
-            while (scanner.hasNext()){
+            while (scanner.hasNext()) {
                 rows.add(scanner.nextLine());
             }
             scanner.close();
 
-            for(int i =0;i<rows.size();i++){
-                ArrayList<String> tempList =(ArrayList<String>) parseLine(rows.get(i));
+            for (int i = 0; i < rows.size(); i++) {
+                ArrayList<String> tempList = (ArrayList<String>) parseLine(rows.get(i));
                 if (tempList.toString().contains("TestName")) {
                     headers = tempList;
                 } else if (tempList.get(0).toString().equals(testName)) {
@@ -37,7 +37,9 @@ public class DataParser {
                 }
             }
             for (int i = 0; i < headers.size(); i++) {
-                dataForTests.put(headers.get(i), values.get(i));
+                if (!values.get(i).isEmpty() || !values.get(i).equals("")) {
+                    dataForTests.put(headers.get(i), values.get(i));
+                }
             }
             System.out.println(dataForTests.toString());
             scanner.close();

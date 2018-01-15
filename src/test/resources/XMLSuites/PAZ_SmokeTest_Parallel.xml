@@ -11,6 +11,7 @@
         <classes>
             <class name="com.hv.test.PAZ_SmokeTest">
                 <methods>
+                    <include name="login"/>
                     <include name="createNewAnalyzerReport"/>
                     <include name="addFieldsToReportWithDoubleClick"/>
                     <include name="addFieldsToReportWithRightClick"/>
@@ -29,6 +30,7 @@
         <classes>
             <class name="com.hv.test.PAZ_SmokeTest">
                 <methods>
+                    <include name="login"/>
                     <include name="createNewAnalyzerReport"/>
                     <include name="addFieldsToReportWithDoubleClick"/>
                     <include name="addFieldsToReportWithRightClick"/>

@@ -9,6 +9,7 @@
         <classes>
             <class name="com.hv.test.DataSource_SqlQueryTest">
                 <methods>
+                    <include name="login"/>
                     <include name="createDataSource"/> <!--{DBConnectionUserName=sa, DBConnectionDBName=SampleData,
                              Query=select * from ORDERS, DataSourceName=TestDataSource,
                               ﻿TestName=DataSource_SqlQueryTest, DBConnectionHostName=localhost,

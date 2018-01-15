@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80cf3769-a24c-42ac-aca1-9ac097d4aede" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/hv/pages/Utils/IHVListener.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/hv/pages/Utils/DataParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/hv/utils/DataParser.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/hv/pages/Utils/EmailSender.java" afterPath="$PROJECT_DIR$/src/main/java/com/hv/utils/EmailSender.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TDD-Selenide.iml" afterPath="$PROJECT_DIR$/TDD-Selenide.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/hv/pages/DataSources/DataSourceWizardPage.java" afterPath="$PROJECT_DIR$/src/main/java/com/hv/pages/DataSources/DataSourceWizardPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/local.properties" afterPath="$PROJECT_DIR$/src/main/resources/local.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/hv/test/BaseTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/hv/test/BaseTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/hv/test/DataSource_SqlQueryTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/hv/test/DataSource_SqlQueryTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/hv/test/PAZ_SmokeTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/hv/test/PAZ_SmokeTest.java" />
@@ -43,35 +39,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="local.properties" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/local.properties">
+      <file leaf-file-name="HVTestListener.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/listeners/HVTestListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmailSender.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/Utils/EmailSender.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="802">
-              <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
-              <folding>
-                <element signature="e#1229#1475#0" expanded="false" />
-                <element signature="e#1474#1475#0" expanded="false" />
-                <marker date="1515772496789" expanded="true" signature="3578:3935" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/hv/test/BaseTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
+            <state relative-caret-position="384">
+              <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,31 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="EmailSender.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/utils/EmailSender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PAZ_SmokeTest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/XMLSuites/PAZ_SmokeTest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PTRTestPlanService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/services/testrail/services/PTRTestPlanService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="379" column="46" selection-start-line="379" selection-start-column="46" selection-end-line="379" selection-end-column="46" />
+            <state relative-caret-position="748">
+              <caret line="47" column="63" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="false" />
               </folding>
@@ -111,24 +63,72 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PTRUpdater.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/services/testrail/PTRUpdater.java">
+      <file leaf-file-name="local.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/local.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-269">
-              <caret line="53" column="52" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
+            <state relative-caret-position="572">
+              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="emailable-report.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test-output/emailable-report.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3234">
+              <caret line="147" column="4" selection-start-line="147" selection-start-column="4" selection-end-line="147" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleReport.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/logevents/SimpleReport.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1435#1467#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#504#505#0" expanded="false" />
+                <element signature="e#579#580#0" expanded="false" />
+                <element signature="e#1667#1668#0" expanded="false" />
+                <element signature="e#1722#1723#0" expanded="false" />
+                <element signature="e#1758#1759#0" expanded="false" />
+                <element signature="e#1826#1827#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_testrail.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/_testrail.properties">
+      <file leaf-file-name="DataParser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/utils/DataParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+            <state relative-caret-position="330">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/hv/test/BaseTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+              <folding>
+                <element signature="e#684#685#0" expanded="false" />
+                <element signature="e#720#721#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PAZ_SmokeTest_Parallel.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/XMLSuites/PAZ_SmokeTest_Parallel.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -137,18 +137,18 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="824">
+            <state relative-caret-position="1474">
               <caret line="67" column="21" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PTRTestInstanceService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/services/testrail/services/PTRTestInstanceService.java">
+      <file leaf-file-name="PAZ_SmokeTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/hv/test/PAZ_SmokeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="22" />
+            <state relative-caret-position="242">
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -182,9 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/LoginPage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/AnalyserReportPage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/PDD/DashboardPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/PIR/InteractiveReportPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/PIR/PIRPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/PAZ/ExportToPDFPage.java" />
@@ -211,28 +208,31 @@
         <option value="$PROJECT_DIR$/src/test/XMLSuites/DataSource_SqlQueryTest.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/DataSources/ManageDataSourcesPage.java" />
         <option value="$PROJECT_DIR$/src/test/XMLSuites/PAZ_SmokeTest.xml" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/Utils/DataParser.java" />
         <option value="$PROJECT_DIR$/src/test/XMLSuites/PAZ_SmokeTest_Parallel.xml" />
         <option value="$PROJECT_DIR$/src/test/resources/XMLSuites/PAZ_SmokeTest_Parallel-1.xml" />
-        <option value="$PROJECT_DIR$/src/test/resources/XMLSuites/DataSource_SqlQueryTest.xml" />
         <option value="$PROJECT_DIR$/target/test-classes/XMLSuites/DataSource_SqlQueryTest.xml" />
         <option value="$PROJECT_DIR$/target/test-classes/XMLSuites/PAZ_SmokeTest.xml" />
         <option value="$PROJECT_DIR$/target/test-classes/XMLSuites/PAZ_SmokeTest_Parallel.xml" />
-        <option value="$PROJECT_DIR$/src/test/resources/XMLSuites/PAZ_SmokeTest_Parallel.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/com/hv/test/PAZ_SmokeTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/hv/test/DataSource_SqlQueryTest.java" />
         <option value="$PROJECT_DIR$/target/surefire-reports/Create PAZ Test/PAZ_SmokeTest.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/DataSources/DataSourceWizardPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/hv/test/BaseTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hv/services/PTRUpdater.java" />
         <option value="$PROJECT_DIR$/src/main/resources/_testrail.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/hv/pages/Utils/EmailSender.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/XMLSuites/PAZ_SmokeTest.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/hv/services/testrail/PTRUpdater.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/resources/local.properties" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/test/resources/XMLSuites/PAZ_SmokeTest.xml" />
+        <option value="$PROJECT_DIR$/src/test/resources/XMLSuites/DataSource_SqlQueryTest.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/hv/test/DataSource_SqlQueryTest.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/XMLSuites/PAZ_SmokeTest_Parallel.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/hv/test/PAZ_SmokeTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/hv/test/BaseTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hv/listeners/HVTestListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hv/utils/EmailSender.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hv/utils/DataParser.java" />
       </list>
     </option>
   </component>
@@ -329,6 +329,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -357,7 +360,77 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="test-output" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tdd-selenide-POM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Selenide-POM-TestNG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="XMLSuites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tdd-selenide-POM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Selenide-POM-TestNG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataCSV" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tdd-selenide-POM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Selenide-POM-TestNG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -409,7 +482,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="testrail" />
+              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -439,11 +512,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tdd-selenide-POM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Selenide-POM-TestNG" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="listeners" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -478,11 +578,11 @@
     <configuration default="false" name="EmailSender" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.hv.pages.Utils.*" />
+          <option name="PATTERN" value="com.hv.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.hv.pages.Utils.EmailSender" />
+      <option name="MAIN_CLASS_NAME" value="com.hv.utils.EmailSender" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -590,23 +690,23 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/XMLSuites/PAZ_SmokeTest_Parallel.xml" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="SUITE" />
       <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" value="" />
       <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
+      <option name="USE_DEFAULT_REPORTERS" value="true" />
+      <option name="PROPERTIES_FILE" value="" />
       <envs />
       <properties />
       <listeners />
@@ -860,8 +960,8 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="TestNG.C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/PAZ_SmokeTest.xml" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/DataSource_SqlQueryTest.xml" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/PAZ_SmokeTest_Parallel.xml" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/PAZ_SmokeTest_Parallel.xml" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/DataSource_SqlQueryTest.xml" />
         <item index="3" class="java.lang.String" itemvalue="TestNG.PAZ_SmokeTest" />
         <item index="4" class="java.lang.String" itemvalue="Application.EmailSender" />
       </list>
@@ -881,64 +981,64 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_DataSource_SqlQueryTest_xml - 2018.01.11 at 16h 31m 58s.xml">
-      <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/DataSource_SqlQueryTest.xml" configurationId="TestNG" />
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_Parallel_xml - 2018.01.15 at 10h 18m 19s.xml">
+      <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/PAZ_SmokeTest_Parallel.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_DataSource_SqlQueryTest_xml - 2018.01.11 at 16h 41m 33s.xml">
-      <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/DataSource_SqlQueryTest.xml" configurationId="TestNG" />
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_Parallel_xml - 2018.01.15 at 10h 23m 20s.xml">
+      <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/PAZ_SmokeTest_Parallel.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_xml - 2018.01.11 at 16h 46m 03s.xml">
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_Parallel_xml - 2018.01.15 at 10h 30m 49s.xml">
+      <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/PAZ_SmokeTest_Parallel.xml" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_Parallel_xml - 2018.01.15 at 10h 34m 50s.xml">
+      <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/PAZ_SmokeTest_Parallel.xml" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_Parallel_xml - 2018.01.15 at 10h 51m 45s.xml">
+      <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/PAZ_SmokeTest_Parallel.xml" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_xml - 2018.01.15 at 09h 08m 16s.xml">
       <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_xml - 2018.01.11 at 16h 48m 17s.xml">
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_xml - 2018.01.15 at 09h 39m 19s.xml">
       <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_xml - 2018.01.12 at 09h 03m 27s.xml">
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_xml - 2018.01.15 at 09h 59m 13s.xml">
       <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_xml - 2018.01.12 at 09h 15m 50s.xml">
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_xml - 2018.01.15 at 10h 40m 57s.xml">
       <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_xml - 2018.01.12 at 09h 21m 41s.xml">
-      <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_xml - 2018.01.12 at 09h 22m 36s.xml">
-      <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_xml - 2018.01.12 at 11h 17m 56s.xml">
-      <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_xml - 2018.01.12 at 11h 19m 28s.xml">
+    <history-entry file="C__Users_shanush_Documents_SHANUSH-PRivate_Selenide-POM-TestNG_Selenide-POM-TestNG_src_test_resources_XMLSuites_PAZ_SmokeTest_xml - 2018.01.15 at 11h 19m 53s.xml">
       <configuration name="C:/Users/shanush/Documents/SHANUSH-PRivate/Selenide-POM-TestNG/Selenide-POM-TestNG/src/test/resources/XMLSuites/PAZ_SmokeTest.xml" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2391" y="-9" width="2418" height="1318" extended-state="6" />
+    <frame x="2391" y="-9" width="2418" height="1318" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261058" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14602904" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14773698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5264527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18104185" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3911535" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18104185" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24978651" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49783173" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261058" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3911535" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -987,20 +1087,14 @@
           <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hv/pages/Utils/EmailSender.java</url>
-          <line>86</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/hv/utils/EmailSender.java</url>
+          <line>92</line>
           <properties />
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/hv/test/BaseTest.java</url>
-          <line>51</line>
-          <properties />
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/hv/test/DataSource_SqlQueryTest.java</url>
-          <line>59</line>
+          <line>56</line>
           <properties />
           <option name="timeStamp" value="88" />
         </line-breakpoint>
@@ -1011,26 +1105,33 @@
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hv/pages/Utils/EmailSender.java</url>
-          <line>59</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/hv/utils/EmailSender.java</url>
+          <line>70</line>
           <properties />
           <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/hv/pages/Utils/EmailSender.java</url>
-          <line>52</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/hv/utils/EmailSender.java</url>
+          <line>53</line>
           <properties />
           <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/hv/utils/DataParser.java</url>
+          <line>39</line>
+          <properties />
+          <option name="timeStamp" value="92" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="92" />
+      <option name="time" value="93" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="TestNG">
-        <watch expression="testContext.getName()" language="JAVA" custom="org.testng.TestRunner" />
+        <watch expression="values.get(i).isEmpty()" language="JAVA" />
+        <watch expression="values.get(i).equals(&quot;&quot;)" language="JAVA" />
       </configuration>
       <configuration name="Application">
         <watch expression="tempList.toString().contains(&quot;TestName&quot;)" language="JAVA" />
@@ -1042,77 +1143,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/ITestClass.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/ITestMethodFinder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/ITestRunnerFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/ITestNGMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/ITestResult.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-356">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/ITestNGListenerFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/ITestNGListener.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/ITestListener.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/ITestContext.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-104">
           <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1120,7 +1154,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1128,7 +1161,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1136,7 +1168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-66">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1144,10 +1175,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="3798" column="30" selection-start-line="3798" selection-start-column="30" selection-end-line="3798" selection-end-column="30" />
-          <folding>
-            <element signature="e#177013#177014#0" expanded="false" />
-            <element signature="e#177054#177055#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1155,15 +1182,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="134" column="25" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/testng/TextReport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,10 +1189,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
           <caret line="2420" column="20" selection-start-line="2420" selection-start-column="20" selection-end-line="2420" selection-end-column="20" />
-          <folding>
-            <element signature="e#94598#94599#0" expanded="false" />
-            <element signature="e#94636#94637#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1182,9 +1196,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding>
-            <element signature="e#1907#1908#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1192,9 +1203,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="368" column="0" selection-start-line="368" selection-start-column="0" selection-end-line="368" selection-end-column="0" />
-          <folding>
-            <element signature="e#11930#11931#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1202,17 +1210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="1072" column="0" selection-start-line="1072" selection-start-column="0" selection-end-line="1072" selection-end-column="0" />
-          <folding>
-            <element signature="e#42135#42136#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/logevents/SimpleReport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1220,7 +1217,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1228,20 +1224,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="457">
           <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/reports/tests/com/hv/test/PAZ_SmokeTest/saveReportWithName/1515697736059.0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/build/reports/tests/com/hv/test/PAZ_SmokeTest/saveReportWithName/1515697736059.0.png" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/TestNG.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="1819" column="20" selection-start-line="1819" selection-start-column="20" selection-end-line="1819" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1249,10 +1239,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="54" column="28" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
-          <folding>
-            <element signature="e#1579#1580#0" expanded="false" />
-            <element signature="e#1623#1624#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1260,15 +1246,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="198" column="16" selection-start-line="198" selection-start-column="16" selection-end-line="198" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/Configuration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="187" column="108" selection-start-line="187" selection-start-column="79" selection-end-line="187" selection-end-column="108" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1276,7 +1253,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1284,10 +1260,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-236">
           <caret line="336" column="16" selection-start-line="336" selection-start-column="16" selection-end-line="336" selection-end-column="16" />
-          <folding>
-            <element signature="e#2731#2732#0" expanded="false" />
-            <element signature="e#2792#2793#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1295,34 +1267,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
-          <folding>
-            <element signature="e#978#979#0" expanded="false" />
-            <element signature="e#1053#1054#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test-output/emailable-report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/hv/test/PAZ_SmokeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-566">
-          <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/XMLSuites/PAZ_SmokeTest_Parallel.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1330,23 +1274,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/XMLSuites/DataSource_SqlQueryTest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/Utils/DataParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1100">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1361,43 +1288,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/hv/test/DataSource_SqlQueryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/services/testrail/PTRClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#999#1000#0" expanded="false" />
-            <element signature="e#1023#1024#0" expanded="false" />
-            <element signature="e#8462#8463#0" expanded="false" />
-            <element signature="e#8501#8502#0" expanded="false" />
-            <element signature="e#8721#8722#0" expanded="false" />
-            <element signature="e#8757#8758#0" expanded="false" />
-            <element signature="e#8973#8974#0" expanded="false" />
-            <element signature="e#9018#9019#0" expanded="false" />
-            <element signature="e#9256#9257#0" expanded="false" />
-            <element signature="e#9335#9336#0" expanded="false" />
-            <element signature="e#9570#9571#0" expanded="false" />
-            <element signature="e#9648#9649#0" expanded="false" />
-            <element signature="e#9838#9839#0" expanded="false" />
-            <element signature="e#9907#9908#0" expanded="false" />
-            <element signature="e#10100#10101#0" expanded="false" />
-            <element signature="e#10171#10172#0" expanded="false" />
-            <element signature="e#10804#10805#0" expanded="false" />
-            <element signature="e#10880#10881#0" expanded="false" />
-            <element signature="e#12148#12149#0" expanded="false" />
-            <element signature="e#12183#12184#0" expanded="false" />
-            <element signature="e#12410#12411#0" expanded="false" />
-            <element signature="e#12453#12454#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1405,38 +1299,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1191">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="e#843#844#0" expanded="false" />
-            <element signature="e#873#874#0" expanded="false" />
-            <element signature="e#904#905#0" expanded="false" />
-            <element signature="e#934#935#0" expanded="false" />
-            <element signature="e#1254#1255#0" expanded="false" />
-            <element signature="e#1284#1285#0" expanded="false" />
-            <element signature="e#1315#1316#0" expanded="false" />
-            <element signature="e#1345#1346#0" expanded="false" />
-            <element signature="e#1768#1769#0" expanded="false" />
-            <element signature="e#1798#1799#0" expanded="false" />
-            <element signature="e#1829#1830#0" expanded="false" />
-            <element signature="e#1859#1860#0" expanded="false" />
-            <element signature="e#2249#2250#0" expanded="false" />
-            <element signature="e#2287#2288#0" expanded="false" />
-            <element signature="e#2322#2323#0" expanded="false" />
-            <element signature="e#2356#2357#0" expanded="false" />
-            <element signature="e#2395#2396#0" expanded="false" />
-            <element signature="e#2433#2434#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/pages/Utils/EmailSender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="802">
-          <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
-          <folding>
-            <element signature="e#1229#1475#0" expanded="false" />
-            <element signature="e#1474#1475#0" expanded="false" />
-            <marker date="1515772496789" expanded="true" signature="3578:3935" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1444,20 +1306,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
           <caret line="405" column="24" selection-start-line="405" selection-start-column="24" selection-end-line="405" selection-end-column="24" />
-          <folding>
-            <element signature="e#15397#15398#0" expanded="true" />
-            <element signature="e#15443#15444#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/services/testrail/services/PTRTestPlanService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="379" column="46" selection-start-line="379" selection-start-column="46" selection-end-line="379" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1465,15 +1313,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="824">
-          <caret line="67" column="21" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1481,36 +1320,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/XMLSuites/PAZ_SmokeTest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/services/testrail/PTRUpdater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-269">
-          <caret line="53" column="52" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1435#1467#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/hv/test/BaseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1518,15 +1327,202 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/services/testrail/services/PTRTestPlanService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8140">
+          <caret line="383" column="120" selection-start-line="383" selection-start-column="120" selection-end-line="383" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/services/testrail/PTRUpdater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="99" column="31" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="93" column="23" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/XMLSuites/DataSource_SqlQueryTest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/hv/test/DataSource_SqlQueryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/ITestNGListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/IInvokedMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/IInvokedMethodListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/ITestListener.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.11/testng-6.11.jar!/org/testng/ITestResult.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/XMLSuites/PAZ_SmokeTest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/testng/GlobalTextReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/testng/TextReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/local.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
+        <state relative-caret-position="572">
           <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-output/emailable-report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3234">
+          <caret line="147" column="4" selection-start-line="147" selection-start-column="4" selection-end-line="147" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/codeborne/selenide/4.8/selenide-4.8-sources.jar!/com/codeborne/selenide/logevents/SimpleReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#504#505#0" expanded="false" />
+            <element signature="e#579#580#0" expanded="false" />
+            <element signature="e#1667#1668#0" expanded="false" />
+            <element signature="e#1722#1723#0" expanded="false" />
+            <element signature="e#1758#1759#0" expanded="false" />
+            <element signature="e#1826#1827#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/utils/EmailSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="47" column="63" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/utils/DataParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/hv/test/BaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+          <folding>
+            <element signature="e#684#685#0" expanded="false" />
+            <element signature="e#720#721#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/XMLSuites/PAZ_SmokeTest_Parallel.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1474">
+          <caret line="67" column="21" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/hv/test/PAZ_SmokeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hv/listeners/HVTestListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,17 +1,12 @@
 package com.hv.test;
 
-
 import com.codeborne.selenide.testng.annotations.Report;
 import com.hv.pages.PAZ.AnalyserReportPage;
 import com.hv.pages.PAZ.ExportToCsvPage;
-import com.hv.pages.Utils.DataParser;
+import com.hv.pages.base.IReportOptions;
 import com.hv.pages.base.LoginPage;
 import com.hv.pages.base.MenuPage;
-import com.hv.pages.base.IReportOptions;
 import org.apache.log4j.Logger;
-import org.testng.ITestContext;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
@@ -27,6 +22,7 @@ import static com.hv.pages.base.FilePage.FILETYPE;
 
 // Automated Test: http://testrail.pentaho.com/index.php?/cases/view/64925
 
+@Report
 public class PAZ_SmokeTest extends BaseTest {
     private static final Logger LOGGER = Logger.getLogger(PAZ_SmokeTest.class);
 
@@ -35,11 +31,8 @@ public class PAZ_SmokeTest extends BaseTest {
     private AnalyserReportPage pazReport;
     private ExportToCsvPage exportToCsvPage;
 
-    @BeforeClass
-    @Parameters({"dataFilePath"})
-    public void login(String dataFilePath, final ITestContext testContext) {
-            //parsing data for TestName to be used in test class.
-            testData = DataParser.getTestData(dataFilePath, testContext.getName());
+    @Test
+    public void login() {
             LOGGER.info("Opening " + baseUrl + " in " + browser + " browser");
             loginPage = open(baseUrl, LoginPage.class);
             menuPage = loginPage.loginWithCredentials(getTestData().get("UserName"), getTestData().get("UserPassword"));

@@ -1,6 +1,5 @@
-package com.hv.pages.Utils;
+package com.hv.utils;
 
-import com.hv.pages.base.LoginPage;
 import org.apache.log4j.Logger;
 import org.testng.ITestContext;
 
@@ -15,8 +14,6 @@ import javax.mail.internet.MimeMultipart;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Created by shanush on 1/11/2018.
@@ -48,13 +45,27 @@ public class EmailSender {
                 message.setFrom(new InternetAddress("pentaho.auto.qa@gmail.com"));
                 message.setRecipients(Message.RecipientType.TO,
                         InternetAddress.parse(email));
-                message.setSubject(testContext.getCurrentXmlTest().getName() + " TEST RESULTS");
+                if (testContext.getFailedTests().size() != 0) {
+                    message.setSubject(testContext.getCurrentXmlTest().getName() + " test FAILED");
+                } else {
+                    message.setSubject(testContext.getCurrentXmlTest().getName() + " TEST RESULTS");
+                }
                 String suiteName = testContext.getCurrentXmlTest().getSuite().getName();
                 String testName = testContext.getName();
                 Multipart multipart = new MimeMultipart();
                 MimeBodyPart textBodyPart = new MimeBodyPart();
-                textBodyPart.setText("Results of running test "+ suiteName+"\n");
-                MimeBodyPart attachmentBodyPart= new MimeBodyPart();
+                StringBuilder sb = new StringBuilder();
+                sb.append(testContext.getCurrentXmlTest().getName() + " has following methods been executed." +
+                        "\n\n" +
+                        "PASSED TESTS:" +
+                        "\n" + testsParse(testContext.getPassedTests().getAllMethods().toString()));
+                if (testContext.getFailedTests().size() != 0) {
+                    sb.append("\n\n FAILED TESTS:" +
+                            "\n" + testsParse(testContext.getFailedTests().getAllMethods().toString()) +
+                            "\n\n See attachment for results.");
+                }
+                textBodyPart.setText(sb.toString());
+                MimeBodyPart attachmentBodyPart = new MimeBodyPart();
                 Thread.sleep(3000);
                 DataSource source = new FileDataSource("test-output\\" + suiteName + "\\" + testName + ".html");
                 attachmentBodyPart.setDataHandler(new DataHandler(source));
@@ -62,12 +73,7 @@ public class EmailSender {
                 multipart.addBodyPart(attachmentBodyPart);
                 multipart.addBodyPart(textBodyPart);
                 message.setContent(multipart);
-//                message.setText(testContext.getCurrentXmlTest().getName() + " has failed with following methods been executed" +
-//                        "\n\n" +
-//                        "\n\n PASSED TESTS:" +
-//                        "\n" + testsParse(testContext.getPassedTests().getAllMethods().toString()) +
-//                        "\n\n FAILED TESTS: " + "\n" + testsParse(testContext.getFailedTests().getAllMethods().toString()));
-//
+
 
                 Transport.send(message);
 
@@ -96,10 +102,10 @@ public class EmailSender {
         StringBuilder sb = new StringBuilder();
         try {
             Scanner scanner = new Scanner(report);
-            while(scanner.hasNext()){
+            while (scanner.hasNext()) {
                 sb.append(scanner.next());
             }
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return sb.toString();

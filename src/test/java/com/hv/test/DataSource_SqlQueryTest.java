@@ -5,7 +5,7 @@ import com.codeborne.selenide.testng.annotations.Report;
 import com.hv.pages.DataSources.DataSourceWizardPage;
 import com.hv.pages.DataSources.ISQLQuery;
 import com.hv.pages.DataSources.ManageDataSourcesPage;
-import com.hv.pages.Utils.DataParser;
+import com.hv.utils.DataParser;
 import com.hv.pages.base.HomePage;
 import com.hv.pages.base.MenuPage;
 import com.hv.pages.base.LoginPage;
@@ -37,10 +37,7 @@ public class DataSource_SqlQueryTest extends BaseTest {
     private ManageDataSourcesPage manageDataSourcesPage;
 
     @BeforeClass
-    @Parameters({"dataFilePath"})
-    public void login(String dataFilePath, final ITestContext testContext) {
-        //parsing data for TestName to be used in test class.
-        testData = DataParser.getTestData(dataFilePath, testContext.getName());
+    public void login() {
         LOGGER.info("Opening " + baseUrl + " in " + browser + " browser");
         loginPage = open(baseUrl, LoginPage.class);
         menuPage = loginPage.loginAsEvaluator(LoginPage.USER.ADMIN);

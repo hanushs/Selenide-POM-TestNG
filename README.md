@@ -1,4 +1,4 @@
-# Selenide-POM-TestNG
+#Selenide-POM-TestNG-Maven
 
 TO Configure startup of the tests you can change setting in local.properties files and set
 desired options. Description can be found at http://selenide.org/javadoc in com.codeborne.selenide.Configuration package
