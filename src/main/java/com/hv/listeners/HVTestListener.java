@@ -52,6 +52,5 @@ public class HVTestListener implements ITestListener {
     }
 
     public void onFinish(ITestContext context) {
-
     }
 }

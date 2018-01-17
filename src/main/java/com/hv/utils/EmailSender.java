@@ -2,6 +2,7 @@ package com.hv.utils;
 
 import org.apache.log4j.Logger;
 import org.testng.ITestContext;
+import org.testng.xml.XmlTest;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
@@ -21,7 +22,7 @@ import java.util.*;
 public class EmailSender {
     private static final Logger LOGGER = Logger.getLogger(EmailSender.class);
 
-    public static void sendEmailTo(final ITestContext testContext, String... emails) {
+    public static void sendEmailTo(final XmlTest testContext, String... emails) {
 
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com");
@@ -45,31 +46,25 @@ public class EmailSender {
                 message.setFrom(new InternetAddress("pentaho.auto.qa@gmail.com"));
                 message.setRecipients(Message.RecipientType.TO,
                         InternetAddress.parse(email));
-                if (testContext.getFailedTests().size() != 0) {
-                    message.setSubject(testContext.getCurrentXmlTest().getName() + " test FAILED");
-                } else {
-                    message.setSubject(testContext.getCurrentXmlTest().getName() + " TEST RESULTS");
-                }
-                String suiteName = testContext.getCurrentXmlTest().getSuite().getName();
+                message.setSubject(testContext.getName() + " TEST RESULTS");
+
+                String suiteName = testContext.getSuite().getName();
                 String testName = testContext.getName();
                 Multipart multipart = new MimeMultipart();
                 MimeBodyPart textBodyPart = new MimeBodyPart();
                 StringBuilder sb = new StringBuilder();
-                sb.append(testContext.getCurrentXmlTest().getName() + " has following methods been executed." +
-                        "\n\n" +
-                        "PASSED TESTS:" +
-                        "\n" + testsParse(testContext.getPassedTests().getAllMethods().toString()));
-                if (testContext.getFailedTests().size() != 0) {
-                    sb.append("\n\n FAILED TESTS:" +
-                            "\n" + testsParse(testContext.getFailedTests().getAllMethods().toString()) +
-                            "\n\n See attachment for results.");
-                }
+                sb.append(testContext.getName() + " has been executed. For results see attached file");
                 textBodyPart.setText(sb.toString());
                 MimeBodyPart attachmentBodyPart = new MimeBodyPart();
                 Thread.sleep(3000);
-                DataSource source = new FileDataSource("test-output\\" + suiteName + "\\" + testName + ".html");
+                File file = new File("test-output\\" + suiteName + "\\" + testName + ".html");
+                while(!file.exists()){
+                    LOGGER.info("File " + file + " doean't exists. Waiting for 1 sec");
+                    Thread.sleep(1000);
+                }
+                DataSource source = new FileDataSource(file);
                 attachmentBodyPart.setDataHandler(new DataHandler(source));
-                attachmentBodyPart.setFileName(suiteName + " report.html");
+                attachmentBodyPart.setFileName(testName + " report.html");
                 multipart.addBodyPart(attachmentBodyPart);
                 multipart.addBodyPart(textBodyPart);
                 message.setContent(multipart);

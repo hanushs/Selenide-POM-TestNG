@@ -22,7 +22,7 @@ import static com.hv.pages.base.FilePage.FILETYPE;
 
 // Automated Test: http://testrail.pentaho.com/index.php?/cases/view/64925
 
-@Report
+
 public class PAZ_SmokeTest extends BaseTest {
     private static final Logger LOGGER = Logger.getLogger(PAZ_SmokeTest.class);
 

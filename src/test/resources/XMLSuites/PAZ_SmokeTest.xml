@@ -3,9 +3,9 @@
 
 <suite name="Create PAZ Test">
 
-    <listeners>
+   <!-- <listeners>
         <listener class-name="com.hv.services.testrail.PTRUpdater" />
-    </listeners>
+    </listeners>-->
 
     <parameter name="dataFilePath" value="src\test\resources\DataCSV\PAZTestData.csv"/>
 
